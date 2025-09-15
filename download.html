@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download</title>
+    <link rel="stylesheet" href="style-download.css">
+    <link rel="icon" href="pack.png">
+</head>
+
+<body>
+    <div id="myPopup" class="popup-overlay">
+        <div class="popup-content">
+            <h1><span style="color: rgba(0, 81, 255, 0.5)">LOG IN</span></h1>
+            <p><input type="text" id="Name" placeholder="Name..."></p>
+            <br />
+            <p><input type="text" id="food" placeholder="Favorite food..."></p>
+            <button id="cancel" onclick="closePopup()">Cancel</button>
+            <button id="next" onclick="accPopup()">Next</button>
+        </div>
+    </div>
+    <div class="top-button">
+        <button id="LogIn" onclick="openPopup()"><b>Log In</b></button>
+        <a href="hub.html">
+            <img src="home.png" loading="lazy" width="35" height="35">
+        </a>
+    </div>
+    <div class="text-at-top">
+        <ul role="list" class="text-top-button">
+            <li>
+                <a href="download.html" class="download"><b>Download</b></a>
+            </li>
+            <li>
+                <a href="https://github.com/w0x7y" class="github"><b>GitHub</b></a>
+            </li>
+            <li>
+                <a href="master.html" class="master"><b>My Master</b></a>
+            </li>
+        </ul>
+    </div>
+    <div class="main-head">
+        <h1>HERE YOU CAN DOWNLOAD<br /> ALL MY PROJECTS IN <br /><span style="font-size: 70px;" id="SIGMA">HTML</span>
+        </h1>
+        <h2>Here are file downloads of all my projects with: <span style="font-size: 35px;" id="SIGMA">HTML, CSS and JS
+            </span>
+        </h2>
+    </div>
+    <div class="calculator">
+        <h2>CALCULATOR</h2>
+        <a href="../calculator/calculator.html" download class="calc-HTML">Calculator.HTML</a>
+        <a href="../calculator/style.css" download class="calc-CSS">Style.CSS</a>
+        <img src="calc.png" class="calc-img" loading="lazy" width="270" height="320">
+        <div class="calc-description">
+            <h2>Description:</h2>
+            <p>This is a my first project that i made in html, css and js.</p>
+            <p>just a simple calculator no much to say.</p>
+        </div>
+    </div>
+    <div class="calculator">
+        <h2>KEYBOARD</h2>
+        <a href="../keyboard/keyboard.html" download class="keyboard-HTML">Keyboard.HTML</a>
+        <a href="../keyboard/style.css" download class="keyboard-CSS">Style.CSS</a>
+        <img src="keyboard.png" class="keyboard-img" loading="lazy" width="420" height="310">
+        <div class="calc-description">
+            <h2>Description:</h2>
+            <p>This is a keyboard that works with mouse input and those not detect keybourd input.</p>
+            <p>The F key dont do any thing in this keyboard but most of the other keys do.</p>
+        </div>
+    </div>
+    <div class="calculator">
+        <h2>PIANO</h2>
+        <a href="../Piano/Piano.html" download class="piano-HTML">Piano.HTML</a>
+        <a href="../Piano/style.css" download class="piano-CSS">Style.CSS</a>
+        <a href="../Piano/notes.zip" download class="notes">Notes.zip</a>
+        <img src="piano.png" class="piano-img" loading="lazy" width="420" height="310">
+        <div class="calc-description">
+            <h2>Description:</h2>
+            <p>This is a working piano that works with both mouse and keyboard: a=C s=D d=E f=F z=G x=A c=B q=C# w=D#
+                e=F# r=G# t=A#.</p>
+            <p>To use it put all the files in the same folder and extract the notes.zip and put the notes folder in the
+                same folder.</p>
+        </div>
+    </div>
+    <div class="calculator">
+        <h2>TASK MANAGER</h2>
+        <a href="../Task Manager/Task Manager.html" download class="TM-HTML">Task Manager.HTML</a>
+        <a href="../Task Manager/style.css" download class="TM-CSS">Style.CSS</a>
+        <img src="TM.png" class="TM-img" loading="lazy" width="430" height="320">
+        <div class="calc-description">
+            <h2>Description:</h2>
+            <p>This is a task manager that let you create tasks and delete them.</p>
+            <p>Type the task name in the input filled and click the button to create the task, after that you can delete
+                the task.</p>
+        </div>
+    </div>
+    <div class="calculator">
+        <h2>E-MARKET</h2>
+        <a href="../E-market/E-market.html" download class="EM-HTML">E-market.HTML</a>
+        <a href="../E-market/style.css" download class="EM-CSS">Style.CSS</a>
+        <a href="../E-market/pics.zip" download class="pics">Pics.zip</a>
+        <img src="E-market.png" class="EM-img" loading="lazy" width="500" height="300">
+        <div class="calc-description">
+            <h2>Description:</h2>
+            <p>A unfinished e-market that let you add items to the cart and "buy" them you can also delete them.</p>
+            <p>The "search" button those not work yet.</p>
+        </div>
+    </div>
+    <div class="loader"></div>
+    <script>
+        window.addEventListener("load", () => {
+            const loader = document.querySelector(".loader");
+
+            loader.classList.add("loader-hidden");
+
+            loader.addEventListener("transitionend", () => {
+                document.body.removeChild("loader");
+            })
+        })
+        function openPopup() {
+            document.getElementById('myPopup').style.display = 'flex';
+        }
+        function closePopup() {
+            document.getElementById('myPopup').style.display = 'none';
+        }
+        function accPopup() {
+            if (document.getElementById('Name').value == '') {
+                alert('Please enter your name');
+                return;
+            }
+            else if (document.getElementById('food').value == '') {
+                alert('Please enter your fevorite food');
+                return;
+            }
+            else {
+                var name = document.getElementById('Name').value;
+
+                const logInButton = document.getElementById('LogIn');
+                const username = name; // Replace 'YourVariable' with your variable
+
+                logInButton.textContent = username;
+                document.getElementById('myPopup').style.display = 'none';
+            }
+        }               
+    </script>
+</body>
+
+</html>
