@@ -16,10 +16,9 @@ body {
     border-radius: 15px;
     cursor: pointer;
     transition: background 0.5s;
-    position: fixed;
+    position: fixed, right;
     z-index: 1000;
     margin-top: 10px;
-    margin: right;
 }
 
 .top-button button:hover {
