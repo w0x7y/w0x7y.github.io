@@ -10,7 +10,7 @@ body {
 .top-button button {
     padding: 10px 15px;
     border: none;
-    background-color: rgba(0, 81, 255, 0.5);
+    background-color: rgba(255, 81, 255, 0.5);
     color: white;
     font-size: 16px;
     border-radius: 15px;
