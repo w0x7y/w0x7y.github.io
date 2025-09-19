@@ -29,7 +29,7 @@
     <div class="text-at-top">
         <ul role="list" class="text-top-button">
             <li>
-                <a href="https://w0x7y.github.io/download" class="download"><b>Download</b></a>
+                <a href=https://w0x7y.github.io/download" class="download"><b>Download</b></a>
             </li>
             <li>
                 <a href="https://github.com/w0x7y" class="github"><b>GitHub</b></a>
@@ -46,11 +46,72 @@
             </spam>
         </h2>
         <br />
-        <button id="button1"><b>UNKNOWN</b></button>
+        <button id="button1" onclick="biographyjump()"><b>Biography</b></button>
         <button id="button2"><b>UNKNOWN</b></button>
         <div class="image">
             <img src="idan.png" id="idan" width="400" height="350">
         </div>
+    </div>
+    <div class="biography" id="biography">
+        <h1>The Life and Legacy of <span style="color: #0051ff;"><strong>Idan Gilboa</strong></span>:</h1>
+        <h2>A Chronicle of a Champion Born in 2010</h2>
+        <p>In the year 2010, amid the rhythm of a fast-changing world, a boy was born in Israel who would grow to embody
+            both strength and intellect. His name: Idan Gilboa. Though the world at large did not yet know it, this
+            young child carried within him the seeds of greatness—seeds that would bloom across two very different yet
+            complementary arenas: the cage of Mixed Martial Arts (MMA), and the ever-expanding universe of knowledge and
+            science.</p>
+        <br />
+        <h2>The Early Spark of Discipline</h2>
+        <p>From his earliest years, Idan showed the traits of determination and curiosity that would set him apart.
+            While many drifted through childhood chasing distractions, Idan was already laying the foundation of a
+            legacy. His restless energy demanded an outlet—and he would find two: the path of the warrior and the path
+            of the scholar.</p>
+        <br />
+        <h2>The Warrior's Path</h2>
+        <p>At 14 years old, Idan Gilboa took his first steps into the rigorous world of MMA training. What began as
+            lessons quickly transformed into a lifestyle, a discipline that shaped his body and mind. Through two years
+            of dedication, he absorbed the techniques of striking, grappling, and submissions, blending them into a
+            style uniquely his own.
+
+            But the proving ground for any fighter is not in training—it is in competition. And so Idan entered the
+            legendary Timtam Tournament, a competition that would become inseparable from his name.
+        <ul>
+            <li><b>In 2018, as a remarkably young competitor, he stunned the audience by taking first place. Many
+                    dismissed it as beginner's luck.</b></li>
+            <li><b>In 2021, he silenced all doubts, reclaiming the crown with skill and strategy.</b></li>
+            <li><b>In 2022, he defended his title once again, securing his reputation as a phenomenon.</b></li>
+            <li><b>And as of 2025, Idan Gilboa still stands undefeated, the reigning Timtam Champion, his streak
+                    unmatched and his dominance unquestioned.</b></li>
+        </ul>
+        In the annals of Timtam history, few have achieved what he has, and none with his combination of youth, drive,
+        and consistency.</p>
+        <br />
+        <h2>The Scholar's Mind</h2>
+        <p>Yet Idan's story does not end with fighting. While others might be content to shine in one arena, he chose
+            two. Beyond the gym and the tournament floor, he immersed himself in the intellectual worlds of programming
+            and physics.
+
+            In programming, he tamed the abstract languages of code, learning to shape logic into functioning creations.
+            His understanding of algorithms reflected the same precision that guided his punches and footwork.
+
+            In physics, Idan unlocked the mechanics of reality itself. Newton's laws became not just theories, but tools
+            to understand the torque of a spinning kick, the velocity of a jab, and the energy transferred in every
+            grapple. To him, science was not distant or abstract—it was alive, it was combat, it was everywhere.</p>
+        <br />
+        <h2>A Legacy Still Unfolding</h2>
+        <p>By the age of 16, Idan Gilboa had achieved what many twice his age only dream of:
+        <ul>
+            <li><b>Three-time Timtam Champion (2018, 2021, 2022).</b></li>
+            <li><b>The reigning 2025 Champion, still undefeated.</b></li>
+            <li><b>A dedicated martial artist, forged in two years of relentless MMA training.</b></li>
+            <li><b>A student of programming and physics, blending physical mastery with intellectual depth.</b></li>
+        </ul>
+        And yet, as impressive as this list may be, it is only the beginning. The chapters yet unwritten promise even
+        greater victories—whether in the cage, the classroom, or beyond.
+
+        For now, Idan Gilboa is a name that stands for discipline, resilience, and curiosity. His journey is not over,
+        but his legacy has already begun.
+        </p>
     </div>
     <div class="loader"></div>
     <script>
@@ -88,10 +149,11 @@
                 document.getElementById('myPopup').style.display = 'none';
             }
         }
+
+        function biographyjump() {
+            document.getElementById("biography").scrollIntoView({ behavior: "smooth" });
+        }
     </script>
 </body>
 
-
 </html>
-
-
