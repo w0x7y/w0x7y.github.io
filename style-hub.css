@@ -18,8 +18,8 @@ body {
     transition: background 0.5s;
     position: fixed;
     z-index: 1000;
-    top: 10px;
-    right: 10px;
+    margin-top: 10px;
+    margin-left: 1760px;
 }
 
 .top-button button:hover {
@@ -30,8 +30,8 @@ body {
     background-color: rgba(0, 81, 255, 0.5);
     border-radius: 15px;
     padding: 5px 5px;
-    top: 10px;
-    left: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
     z-index: 1000;
     position: fixed;
     transition: background 0.5s;
@@ -236,4 +236,29 @@ body {
     background-color: rgba(0, 81, 255, 0.8);
     color: white;
     border: none;
+}
+
+.biography p {
+    font-size: 20px;
+}
+
+.biography {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 81, 255, 0.1);
+    max-width: 100%;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.biography h1 {
+    text-align: center;
+}
+
+.biography h2 {
+    text-align: center;
+    color: #0051ff;
+    font-family: poppins;
+    font-weight: 600;
 }
