@@ -262,3 +262,35 @@ body {
     font-family: poppins;
     font-weight: 600;
 }
+
+.information {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 81, 255, 0.1);
+    max-width: 50%;
+    margin: 0 auto;
+    margin-top: 50px;
+    text-align: center;
+    font-size: 25px;
+    color: #000000;
+    font-family: poppins;
+    font-weight: 600;
+}
+
+.information a {
+    text-decoration: none;
+    list-style-type: none;
+    color: #0051ff;
+    font-family: poppins;
+}
+
+.information ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.information li {
+    margin: 10px 0;
+}
