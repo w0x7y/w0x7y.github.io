@@ -18,8 +18,8 @@ body {
     transition: background 0.5s;
     position: fixed;
     z-index: 1000;
-    margin-top: 10px;
-    margin-left: 1760px;
+    top: 10px;
+    right: 10px;;
 }
 
 .top-button button:hover {
@@ -30,8 +30,8 @@ body {
     background-color: rgba(0, 81, 255, 0.5);
     border-radius: 15px;
     padding: 5px 5px;
-    margin-top: 10px;
-    margin-left: 10px;
+    top: 10px;
+    left: 10px;
     z-index: 1000;
     position: fixed;
     transition: background 0.5s;
