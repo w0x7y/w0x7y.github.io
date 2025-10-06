@@ -55,6 +55,29 @@ body {
     list-style-type: none;
 }
 
+.off-screen-menu li {
+    margin: 30px 0;
+    text-align: left;
+    list-style-type: none;
+}
+
+#LogIn-mini {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0);
+    padding: 10px 10px;
+    min-height: 25px;
+    border-radius: 15px;
+    border: none;
+    font-size: 45px;
+}
+
+#LogIn-mini:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 81, 255);
+}
+
+.home,
 .master,
 .download,
 .github {
@@ -66,6 +89,7 @@ body {
     border-radius: 15px;
 }
 
+.home:hover,
 .master:hover,
 .download:hover,
 .github:hover {
@@ -295,3 +319,113 @@ body {
     margin: 10px 0;
 }
 
+.off-screen-menu {
+    background-color: #ffffff;
+    height: 100vh;
+    width: 100%;
+    max-width: 450px;
+    position: fixed;
+    top: 0;
+    right: -450px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 3rem;
+    transition: right 0.4s ease;
+    box-shadow: 0 10px 25px rgba(0, 81, 255, 0.1);
+}
+
+.off-screen-menu.active {
+    right: 0;
+    z-index: 50;
+}
+
+nav {
+    padding: 1rem;
+    background-color: #ffffff;
+    display: none;
+}
+
+.ham-menu {
+    height: 50px;
+    width: 50px;
+    margin-left: auto;
+    position: fixed;
+    margin: r;
+}
+
+.ham-menu span {
+    height: 5px;
+    width: 40px;
+    background-color: rgb(73, 131, 255);
+    border-radius: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.4s ease;
+}
+
+.ham-menu span:nth-child(1) {
+    top: 25%;
+}
+
+.ham-menu span:nth-child(3) {
+    top: 75%;
+}
+
+.ham-menu.active span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.ham-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.ham-menu.active span:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+@media only screen and (max-width: 600px) {
+    .main-head {
+        text-align: center;
+        padding: 5px;
+        max-width: 100%;
+        width: 350px;
+        height: 500px;
+    }
+
+    .biography {
+        text-align: center;
+        max-width: 100%;
+        width: 330px;
+    }
+
+    #idan {
+        display: none;
+    }
+
+    .top-button {
+        display: none;
+    }
+
+    .text-top-button {
+        display: none;
+    }
+
+    .information h1 {
+        font-size: 30px;
+    }
+
+    nav {
+        display: flex;
+    }
+
+    .off-screen-menu {
+        display: flex;
+    }
+}
