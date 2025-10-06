@@ -10,6 +10,32 @@
 </head>
 
 <body>
+    <div class="off-screen-menu">
+        <ul>
+            <li>
+                <button id="LogIn-mini" onclick="openPopup()"><b>Log In</b></button>
+            </li>
+            <li>
+                <a href="https://w0x7y.github.io" class="home"><b>Home</b></a>
+            </li>
+            <li>
+                <a href="https://w0x7y.github.io/download" class="download"><b>Download</b></a>
+            </li>
+            <li>
+                <a href="https://w0x7y.github.io/master" class="master"><b>My Master</b></a>
+            </li>
+            <li>
+                <a href="https://github.com/w0x7y" class="github"><b>GitHub</b></a>
+            </li>
+        </ul>
+    </div>
+    <nav>
+        <div class="ham-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
     <div id="myPopup" class="popup-overlay">
         <div class="popup-content">
             <h1><span style="color: rgba(0, 81, 255, 0.5)">LOG IN</span></h1>
@@ -166,6 +192,14 @@
         function informationjump() {
             document.getElementById("information").scrollIntoView({ behavior: "smooth" });
         }
+
+        const hamMenu = document.querySelector('.ham-menu');
+        const offScreenMenu = document.querySelector('.off-screen-menu');
+
+        hamMenu.addEventListener('click', () => {
+            hamMenu.classList.toggle('active');
+            offScreenMenu.classList.toggle('active');
+        });
     </script>
 </body>
 
