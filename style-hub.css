@@ -353,7 +353,7 @@ nav {
     width: 50px;
     margin-left: auto;
     position: fixed;
-    margin: r;
+    z-index: 200;
 }
 
 .ham-menu span {
@@ -429,3 +429,4 @@ nav {
         display: flex;
     }
 }
+
