@@ -3,14 +3,39 @@
     font-family: "Poppins", sans-serif;
 }
 
-body {
-    background-color: #fff;
+:root {
+    --primary-color-main: rgba(255, 255, 255);
+    --secondary-color-main: rgba(0, 81, 255, 0.1);
+    --primary-color: rgba(255, 255, 255);
+    --secondary-color: rgba(0, 81, 255, 0.5);
+    --text-color1: rgba(0, 81, 255);
+    --text-color2: rgb(0, 0, 0);
+    --text-color3: rgb(255, 255, 255);
+    --shit-hover: rgba(0, 81, 255);
+    --icon-fr: pack.png;
 }
 
-.top-button button {
+.Visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+body {
+    background: var(--primary-color);
+    background-attachment: fixed;
+    /* keeps gradient static when scrolling */
+    background-size: cover;
+}
+
+.LogIn {
     padding: 10px 15px;
     border: none;
-    background-color: rgba(0, 81, 255, 0.5);
+    background-color: var(--secondary-color);
     color: white;
     font-size: 16px;
     border-radius: 15px;
@@ -22,12 +47,12 @@ body {
     right: 10px;
 }
 
-.top-button button:hover {
-    background-color: rgba(0, 81, 255);
+.LogIn:hover {
+    background-color: var(--shit-hover);
 }
 
 .top-button img {
-    background-color: rgba(0, 81, 255, 0.5);
+    background-color: var(--secondary-color);
     border-radius: 15px;
     padding: 5px 5px;
     top: 10px;
@@ -40,7 +65,7 @@ body {
 }
 
 .top-button img:hover {
-    background-color: rgba(0, 81, 255);
+    background-color: var(--shit-hover);
 }
 
 .text-top-button {
@@ -62,7 +87,7 @@ body {
 }
 
 #LogIn-mini {
-    color: rgb(0, 0, 0);
+    color: var(--text-color2);
     text-decoration: none;
     background-color: rgba(255, 255, 255, 0);
     padding: 10px 10px;
@@ -74,14 +99,14 @@ body {
 
 #LogIn-mini:hover {
     color: rgb(255, 255, 255);
-    background-color: rgba(0, 81, 255);
+    background-color: var(--shit-hover);
 }
 
 .home,
 .master,
 .download,
 .github {
-    color: rgb(0, 0, 0);
+    color: var(--text-color2);
     text-decoration: none;
     background-color: none;
     padding: 10px 10px;
@@ -93,8 +118,8 @@ body {
 .master:hover,
 .download:hover,
 .github:hover {
-    color: rgb(255, 255, 255);
-    background-color: rgba(0, 81, 255);
+    color: white;
+    background-color: var(--shit-hover);
 }
 
 .loader {
@@ -121,7 +146,7 @@ body {
     width: 75px;
     height: 75px;
     border: 15px solid #dddddd;
-    border-top-color: #4980f5;
+    border-top-color: var(--text-color1);
     border-radius: 50%;
     animation: loading 0.75s ease infinite;
 }
@@ -137,7 +162,7 @@ body {
 }
 
 #SIGMA {
-    color: #0051ff;
+    color: var(--text-color1);
     font-family: poppins;
     font-weight: 600;
     text-align: center;
@@ -145,21 +170,22 @@ body {
 
 .main-head {
     padding: 30px;
-    background-color: #fff;
+    background-color: var(--primary-color-main);
     border-radius: 10px;
-    box-shadow: 0 10px 25px rgba(0, 81, 255, 0.1);
+    box-shadow: 0 10px 25px var(--secondary-color-main);
     width: 900px;
     max-width: 100%;
     height: 340px;
     margin: 0 auto;
     margin-top: 30px;
+    color: var(--text-color2);
 }
 
 #button1,
 #button2 {
     padding: 10px 20px;
     border: none;
-    background-color: rgba(0, 81, 255, 0.5);
+    background-color: var(--secondary-color);
     color: white;
     font-size: 16px;
     border-radius: 5px;
@@ -170,7 +196,7 @@ body {
 
 #button1:hover,
 #button2:hover {
-    background-color: rgba(0, 81, 255);
+    background-color: var(--shit-hover);
 }
 
 #idan {
@@ -203,6 +229,7 @@ body {
     width: 500px;
     height: 300px;
     text-align: center;
+    padding-bottom: 40px;
 }
 
 #Name {
@@ -212,6 +239,7 @@ body {
     border: 1px solid #ccc;
     font-size: 30px;
     width: 400px;
+    outline: none;
 }
 
 #food {
@@ -221,6 +249,12 @@ body {
     border: 1px solid #ccc;
     font-size: 30px;
     width: 400px;
+    outline: none;
+}
+
+#Name,
+#food {
+    caret-color: var(--text-color3);
 }
 
 .popup-content button {
@@ -237,13 +271,13 @@ body {
 #cancel {
     color: #000000;
     background-color: white;
-    border: 2px solid rgba(0, 81, 255, 0.5);
+    border: 2px solid var(--text-color1);
     width: 90px;
     height: 50px;
 }
 
 #cancel:hover {
-    background-color: rgba(0, 81, 255, 0.8);
+    background-color: var(--shit-hover);
     color: white;
     border: none;
 }
@@ -251,26 +285,29 @@ body {
 #next {
     color: #000000;
     background-color: white;
-    border: 2px solid rgba(0, 81, 255, 0.5);
+    border: 2px solid var(--text-color1);
     width: 90px;
     height: 50px;
 }
 
 #next:hover {
-    background-color: rgba(0, 81, 255, 0.8);
+    background-color: var(--shit-hover);
     color: white;
     border: none;
 }
 
-.biography p {
+.biography p,
+.biography ul,
+.biography li {
     font-size: 20px;
+    color: var(--text-color2);
 }
 
 .biography {
     padding: 20px;
-    background-color: #fff;
+    background-color: var(--primary-color-main);
     border-radius: 10px;
-    box-shadow: 0 10px 25px rgba(0, 81, 255, 0.1);
+    box-shadow: 0 10px 25px var(--secondary-color-main);
     max-width: 100%;
     margin: 0 auto;
     margin-top: 50px;
@@ -278,26 +315,27 @@ body {
 
 .biography h1 {
     text-align: center;
+    color: var(--text-color2);
 }
 
 .biography h2 {
     text-align: center;
-    color: #0051ff;
+    color: var(--text-color1);
     font-family: poppins;
     font-weight: 600;
 }
 
 .information {
     padding: 20px;
-    background-color: #fff;
+    background-color: var(--primary-color-main);
     border-radius: 10px;
-    box-shadow: 0 10px 25px rgba(0, 81, 255, 0.1);
+    box-shadow: 0 10px 25px var(--secondary-color-main);
     max-width: 50%;
     margin: 0 auto;
     margin-top: 50px;
     text-align: center;
     font-size: 25px;
-    color: #000000;
+    color: var(--text-color2);
     font-family: poppins;
     font-weight: 600;
 }
@@ -305,7 +343,7 @@ body {
 .information a {
     text-decoration: none;
     list-style-type: none;
-    color: #0051ff;
+    color: var(--text-color1);
     font-family: poppins;
 }
 
@@ -320,7 +358,7 @@ body {
 }
 
 .off-screen-menu {
-    background-color: #ffffff;
+    background-color: var(--primary-color-main);
     height: 100vh;
     width: 100%;
     max-width: 450px;
@@ -334,7 +372,7 @@ body {
     text-align: center;
     font-size: 3rem;
     transition: right 0.4s ease;
-    box-shadow: 0 10px 25px rgba(0, 81, 255, 0.1);
+    box-shadow: 0 10px 25px var(--secondary-color-main);
 }
 
 .off-screen-menu.active {
@@ -344,7 +382,7 @@ body {
 
 nav {
     padding: 1rem;
-    background-color: #ffffff;
+    background-color: none;
     display: none;
 }
 
@@ -359,7 +397,7 @@ nav {
 .ham-menu span {
     height: 5px;
     width: 40px;
-    background-color: rgb(73, 131, 255);
+    background-color: var(--text-color1);
     border-radius: 25px;
     position: absolute;
     top: 50%;
@@ -428,5 +466,169 @@ nav {
     .off-screen-menu {
         display: flex;
     }
+
+    .div-theme {
+        display: none;
+    }
 }
 
+.color-picker {
+    display: flex;
+    justify-content: left;
+    width: 100%;
+    z-index: 100;
+}
+
+.color-picker span {
+    color: white;
+    font-family: poppins;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    background: none;
+    z-index: 100;
+}
+
+#Themes-text {
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    position: fixed;
+    background-color: var(--secondary-color);
+    border-radius: 1rem 1rem 1rem 1rem;
+    padding: 0.7rem 0.7rem;
+    bottom: 10px;
+    left: 10px;
+    font-family: poppins;
+    font-weight: 600;
+    font-size: 25px;
+    transition: border-radius 0.3s ease, box-shadow 0.3s ease;
+    z-index: 100;
+}
+
+.color-picker fieldset {
+    border: none;
+    display: flex;
+    gap: 0;
+    width: fit-content;
+    background-color: none;
+    border-radius: 1rem 1rem 1rem 1rem;
+    padding: 0.7rem 0.7rem;
+    position: fixed;
+    bottom: -50px;
+    left: 125px;
+    z-index: 100;
+    transition: transform 0.7s ease, gap 0.3s ease;
+    transform: translateY(20px);
+}
+
+.color-picker input[type="radio"] {
+    appearance: none;
+    width: 0rem;
+    height: 0rem;
+    outline: none;
+    outline-offset: none;
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.7s ease;
+    z-index: 100;
+}
+
+#Themes-text:hover~fieldset input[type="radio"],
+.color-picker fieldset:hover input[type="radio"] {
+    opacity: 1;
+    transform: scale(1);
+    width: 1.5rem;
+    height: 1.5rem;
+    outline: 3px solid var(--radio-color, currentColor);
+    outline-offset: 3px;
+    pointer-events: auto;
+    z-index: 100;
+}
+
+#Themes-text:hover~fieldset,
+.color-picker fieldset:hover {
+    bottom: -50px;
+    left: 125px;
+    gap: 2rem;
+    background-color: var(--secondary-color);
+    box-shadow: none;
+    transform: translateY(-60px);
+    z-index: 100;
+}
+
+.bad-fieldset {
+    border: none;
+    display: flex;
+    gap: 20px;
+    width: fit-content;
+    z-index: 100;
+}
+
+.banana {
+    display: none;
+    z-index: 100;
+}
+
+.label-banana {
+    top: 62px;
+    position: relative;
+    z-index: 100;
+}
+
+.color-picker input[type="radio"]:checked {
+    background-color: var(--radio-color-background, currentColor);
+}
+
+.color-picker input[type="radio"]#light-theme {
+    --radio-color: rgb(35, 105, 255);
+    --radio-color-background: #ececec;
+}
+
+.color-picker input[type="radio"]#Neon-theme {
+    --radio-color: #ff00ea;
+    --radio-color-background: #00f7ff;
+}
+
+.color-picker input[type="radio"]#dark-theme {
+    --radio-color: #000000;
+    --radio-color-background: #474747;
+}
+
+:root:has(#dark-theme:checked) {
+    --primary-color: rgb(31, 31, 31);
+    --secondary-color: rgba(255, 255, 255, 0.5);
+    --shit-hover: rgb(61, 61, 61);
+    --primary-color-main: rgb(44, 44, 44);
+    --secondary-color-main: rgba(255, 255, 255, 0.1);
+    --text-color1: rgb(129, 129, 129);
+    --text-color2: rgb(255, 255, 255);
+    --text-color3: rgb(0, 0, 0);
+    --icon-fr: pack1.png;
+}
+
+:root:has(#light-theme:checked) {
+    --primary-color-main: rgba(255, 255, 255);
+    --secondary-color-main: rgba(0, 81, 255, 0.1);
+    --primary-color: rgba(255, 255, 255);
+    --secondary-color: rgba(0, 81, 255, 0.5);
+    --text-color1: rgba(0, 81, 255);
+    --text-color2: rgb(0, 0, 0);
+    --text-color3: rgb(255, 255, 255);
+    --shit-hover: rgba(0, 81, 255);
+    --icon-fr: pack.png;
+}
+
+:root:has(#Neon-theme:checked) {
+    --primary-color: linear-gradient(135deg, #ff00ea 0%, #00f7ff 100%);
+    --secondary-color: #00f7ff9a;
+    --shit-hover: #00f7ff;
+    --primary-color-main: #ff00ea;
+    --secondary-color-main: rgba(0, 247, 255, 0.5);
+    --text-color1: #00ccff;
+    --text-color2: rgb(255, 255, 255);
+    --text-color3: #ff00ea;
+    --icon-fr: pack2.png;
+}
