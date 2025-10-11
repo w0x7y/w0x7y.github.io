@@ -6,11 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hub</title>
     <link rel="stylesheet" href="style-hub.css">
-    <link rel="icon" href="pack.png">
+    <link rel="icon" href="icon.png">
 </head>
 
 <body>
+    <dive class="div-theme">
+        <form class="color-picker" action="">
+            <span id="Themes-text"><b>Themes</b></span>
+            <fieldset class="good-fieldset">
+                <legend class="Visually-hidden">Pick a color scheme</legend>
+
+                <label for="light-theme" class="Visually-hidden">Light</label>
+                <input type="radio" name="theme" id="light-theme" checked>
+
+                <label for="dark-theme" class="Visually-hidden">Dark</label>
+                <input type="radio" name="theme" id="dark-theme">
+
+                <label for="Neon-theme" class="Visually-hidden">Neon</label>
+                <input type="radio" name="theme" id="Neon-theme">
+            </fieldset>
+        </form>
+    </dive>
     <div class="off-screen-menu">
+        <fieldset class="bad-fieldset">
+            <h5 style="color: var(--text-color2)">Themes:</h5>
+            <legend class="Visually-hidden">Pick a color scheme</legend>
+
+            <label class="label-banana" for="light-theme"><img src="light.png" width="30" height="30"></label>
+            <input type="radio" name="theme" class="banana" id="light-theme">
+
+            <label class="label-banana" for="dark-theme"><img src="dark.png" width="30" height="30"></label>
+            <input type="radio" name="theme" class="banana" id="dark-theme">
+
+            <label class="label-banana" for="Neon-theme"><img src="neon.png" width="30" height="30"></label>
+            <input type="radio" name="theme" class="banana" id="Neon-theme">
+        </fieldset>
         <ul>
             <li>
                 <button id="LogIn-mini" onclick="openPopup()"><b>Log In</b></button>
@@ -38,7 +68,7 @@
     </nav>
     <div id="myPopup" class="popup-overlay">
         <div class="popup-content">
-            <h1><span style="color: rgba(0, 81, 255, 0.5)">LOG IN</span></h1>
+            <h1><span style="color: var(--text-color1)">LOG IN</span></h1>
             <p><input type="text" id="Name" placeholder="Name..."></p>
             <br />
             <p><input type="text" id="food" placeholder="Favorite food..."></p>
@@ -47,10 +77,11 @@
         </div>
     </div>
     <div class="top-button">
-        <button id="LogIn" onclick="openPopup()"><b>Log In</b></button>
+        <button class="LogIn" id="LogIn" onclick="openPopup()"><b>Log In</b></button>
         <a href="https://w0x7y.github.io">
             <img src="home.png" loading="lazy" width="35" height="35">
         </a>
+
     </div>
     <div class="text-at-top">
         <ul role="list" class="text-top-button">
@@ -79,7 +110,7 @@
         </div>
     </div>
     <div class="biography" id="biography">
-        <h1>The Life and Legacy of <span style="color: #0051ff;"><strong>Idan Gilboa</strong></span>:</h1>
+        <h1>The Life and Legacy of <span style="color: var(--text-color1);"><strong>Idan Gilboa</strong></span>:</h1>
         <h2>A Chronicle of a Champion Born in 2010</h2>
         <p>In the year 2010, amid the rhythm of a fast-changing world, a boy was born in Israel who would grow to embody
             both strength and intellect. His name: Idan Gilboa. Though the world at large did not yet know it, this
@@ -101,6 +132,7 @@
 
             But the proving ground for any fighter is not in training—it is in competition. And so Idan entered the
             legendary Timtam Tournament, a competition that would become inseparable from his name.
+        </p>
         <ul>
             <li><b>In 2018, as a remarkably young competitor, he stunned the audience by taking first place. Many
                     dismissed it as beginner's luck.</b></li>
@@ -109,8 +141,9 @@
             <li><b>And as of 2025, Idan Gilboa still stands undefeated, the reigning Timtam Champion, his streak
                     unmatched and his dominance unquestioned.</b></li>
         </ul>
-        In the annals of Timtam history, few have achieved what he has, and none with his combination of youth, drive,
-        and consistency.</p>
+        <p>In the annals of Timtam history, few have achieved what he has, and none with his combination of youth,
+            drive,
+            and consistency.</p>
         <br />
         <h2>The Scholar's Mind</h2>
         <p>Yet Idan's story does not end with fighting. While others might be content to shine in one arena, he chose
@@ -125,18 +158,19 @@
             grapple. To him, science was not distant or abstract—it was alive, it was combat, it was everywhere.</p>
         <br />
         <h2>A Legacy Still Unfolding</h2>
-        <p>By the age of 16, Idan Gilboa had achieved what many twice his age only dream of:
+        <p>By the age of 16, Idan Gilboa had achieved what many twice his age only dream of:</p>
         <ul>
             <li><b>Three-time Timtam Champion (2018, 2021, 2022).</b></li>
             <li><b>The reigning 2025 Champion, still undefeated.</b></li>
             <li><b>A dedicated martial artist, forged in two years of relentless MMA training.</b></li>
             <li><b>A student of programming and physics, blending physical mastery with intellectual depth.</b></li>
         </ul>
-        And yet, as impressive as this list may be, it is only the beginning. The chapters yet unwritten promise even
-        greater victories—whether in the cage, the classroom, or beyond.
+        <p>And yet, as impressive as this list may be, it is only the beginning. The chapters yet unwritten promise even
+            greater victories—whether in the cage, the classroom, or beyond.
 
-        For now, Idan Gilboa is a name that stands for discipline, resilience, and curiosity. His journey is not over,
-        but his legacy has already begun.
+            For now, Idan Gilboa is a name that stands for discipline, resilience, and curiosity. His journey is not
+            over,
+            but his legacy has already begun.
         </p>
     </div>
     <div class="information" id="information">
@@ -148,59 +182,7 @@
         </ul>
     </div>
     <div class="loader"></div>
-    <script>
-        window.addEventListener("load", () => {
-            const loader = document.querySelector(".loader");
-
-            loader.classList.add("loader-hidden");
-
-            loader.addEventListener("transitionend", () => {
-                document.body.removeChild("loader");
-            })
-        })
-        function openPopup() {
-            document.getElementById('myPopup').style.display = 'flex';
-        }
-        function closePopup() {
-            document.getElementById('myPopup').style.display = 'none';
-        }
-
-        function accPopup() {
-            if (document.getElementById('Name').value == '') {
-                alert('Please enter your name');
-                return;
-            }
-            else if (document.getElementById('food').value == '') {
-                alert('Please enter your fevorite food');
-                return;
-            }
-            else {
-                var name = document.getElementById('Name').value;
-
-                const logInButton = document.getElementById('LogIn');
-                const username = name; // Replace 'YourVariable' with your variable
-
-                logInButton.textContent = username;
-                document.getElementById('myPopup').style.display = 'none';
-            }
-        }
-
-        function biographyjump() {
-            document.getElementById("biography").scrollIntoView({ behavior: "smooth" });
-        }
-
-        function informationjump() {
-            document.getElementById("information").scrollIntoView({ behavior: "smooth" });
-        }
-
-        const hamMenu = document.querySelector('.ham-menu');
-        const offScreenMenu = document.querySelector('.off-screen-menu');
-
-        hamMenu.addEventListener('click', () => {
-            hamMenu.classList.toggle('active');
-            offScreenMenu.classList.toggle('active');
-        });
-    </script>
+    <script src="script-hub.js"></script>
 </body>
 
 </html>
