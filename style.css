@@ -278,7 +278,7 @@ section {
     display: grid;
     place-items: center;
     color: var(--bg-surface);
-    background: linear-gradient(145deg, var(--primary), #7fb4ff);
+    background: linear-gradient(145deg, var(--secondary), #fade6b);
     border-radius: 16px;
     box-shadow: var(--clay-shadow-outer), inset -5px -5px 10px rgba(0, 0, 0, 0.1), inset 5px 5px 10px rgba(255, 255, 255, 0.28);
     font-size: 1.2rem;
@@ -302,20 +302,47 @@ section {
 }
 
 .stack-list li {
+    --chip-color: var(--primary);
+    --chip-glow: rgba(77, 150, 255, 0.18);
     color: var(--text-secondary);
-    background: var(--bg-surface);
+    background: linear-gradient(145deg, var(--bg-surface), var(--chip-glow));
     border-radius: 999px;
-    box-shadow: var(--clay-shadow-inner);
+    box-shadow: var(--clay-shadow-inner), inset 0 0 0 2px var(--chip-glow);
     padding: 10px 14px;
     font-size: 0.92rem;
     font-weight: 800;
     transition: color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.stack-list li:nth-child(5n + 1) {
+    --chip-color: var(--primary);
+    --chip-glow: rgba(77, 150, 255, 0.2);
+}
+
+.stack-list li:nth-child(5n + 2) {
+    --chip-color: var(--secondary);
+    --chip-glow: rgba(255, 217, 61, 0.24);
+}
+
+.stack-list li:nth-child(5n + 3) {
+    --chip-color: var(--tertiary);
+    --chip-glow: rgba(107, 203, 119, 0.22);
+}
+
+.stack-list li:nth-child(5n + 4) {
+    --chip-color: var(--red);
+    --chip-glow: rgba(255, 180, 171, 0.26);
+}
+
+.stack-list li:nth-child(5n + 5) {
+    --chip-color: #bba7ff;
+    --chip-glow: rgba(187, 167, 255, 0.24);
+}
+
 .stack-list li:hover {
     color: var(--text-primary);
     transform: translateY(-3px);
-    box-shadow: var(--clay-shadow-outer), var(--clay-shadow-inner);
+    box-shadow: var(--clay-shadow-outer), var(--clay-shadow-inner), inset 0 0 0 2px var(--chip-color);
 }
 
 .socials {
