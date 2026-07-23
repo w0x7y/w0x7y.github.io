@@ -118,7 +118,29 @@
                 </div>
             </div>
         </section>
-        <section id="projects">Projects</section>
+        <section id="projects">
+            <div class="projects-content">
+                <div class="section-title">
+                    <h2>Things I've built</h2>
+                    <p>A few projects I've worked on, from client sites to personal experiments.</p>
+                </div>
+
+                <div class="projects-grid" id="projectsGrid" aria-label="Project list"></div>
+
+                <button type="button" class="view-more-btn" id="viewMoreBtn">View more</button>
+            </div>
+        </section>
+
+        <div class="modal-overlay" id="projectsModalOverlay">
+            <div class="modal-card" role="dialog" aria-modal="true" aria-label="More projects">
+                <button type="button" class="modal-close" id="projectsModalClose" aria-label="Close popup">&times;</button>
+                <div class="modal-header">
+                    <h2>All projects</h2>
+                    <p>Everything I've built, all in one place.</p>
+                </div>
+                <div class="modal-projects-grid" id="modalProjectsGrid" aria-label="All projects"></div>
+            </div>
+        </div>
         <section id="contact">Contact</section>
         
         <script src='script.js'></script>
