@@ -4,7 +4,7 @@
         <meta charset='UTF-8'>
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
         <link rel='stylesheet' href='style.css'>
-        <title>Document</title>
+        <title>Idan Gilboa — Fullstack Developer</title>
     </head>
     <body>
         <nav>
@@ -83,7 +83,7 @@
                     <article class="journey-point">
                         <span class="journey-dot">01</span>
                         <div class="journey-card">
-                            <p class="journey-date">First steps</p>
+                            <p class="journey-stage">First steps</p>
                             <h3>High school</h3>
                             <p>I studied at <a href="https://schools.ort.org.il/ort-guttman/">Ort Gotman</a> in a technology-focused class, where I learned Python, C#, SQL, and the basics of HTML, CSS, and JavaScript.</p>
                         </div>
@@ -92,7 +92,7 @@
                     <article class="journey-point">
                         <span class="journey-dot">02</span>
                         <div class="journey-card">
-                            <p class="journey-date">Got hooked</p>
+                            <p class="journey-stage">Got hooked</p>
                             <h3>Self Learning</h3>
                             <p>Since 7th grade, I have kept learning new languages, tools, and skills that help me grow as a developer and builder.</p>
                         </div>
@@ -101,7 +101,7 @@
                     <article class="journey-point">
                         <span class="journey-dot">03</span>
                         <div class="journey-card">
-                            <p class="journey-date">Client work</p>
+                            <p class="journey-stage">Client work</p>
                             <h3>Moved into real projects</h3>
                             <p>During the summer, I started creating websites for local shops and businesses, which helped me improve my skills and learn how to communicate with real clients.</p>
                         </div>
@@ -110,7 +110,7 @@
                     <article class="journey-point">
                         <span class="journey-dot">04</span>
                         <div class="journey-card">
-                            <p class="journey-date">Now</p>
+                            <p class="journey-stage">Now</p>
                             <h3>Building polished experiences</h3>
                             <p>Today I focus on clean code, playful design, smooth UX/UI, and shipping products that feel useful, thoughtful, and good to use.</p>
                         </div>
@@ -136,9 +136,12 @@
                 <button type="button" class="modal-close" id="projectsModalClose" aria-label="Close popup">&times;</button>
                 <div class="modal-header">
                     <h2>All projects</h2>
-                    <p>Everything I've built, all in one place.</p>
+                    <p>Pick a project on the left to see more about it.</p>
                 </div>
-                <div class="modal-projects-grid" id="modalProjectsGrid" aria-label="All projects"></div>
+                <div class="modal-body">
+                    <div class="modal-list" id="modalProjectsList" aria-label="All projects"></div>
+                    <div class="modal-detail" id="modalProjectDetail" aria-live="polite"></div>
+                </div>
             </div>
         </div>
         <section id="contact">Contact</section>
