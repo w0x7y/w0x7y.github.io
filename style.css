@@ -6,38 +6,38 @@
 
 :root {
 
-  --font-family: 'Maple Mono', monospace;
-  --primary: #4D96FF;
-  --secondary: #FFD93D;
-  --tertiary: #6BCB77;
-  --red: #FFB4AB;
-  --neutral: #74777F;
+    --font-family: 'Maple Mono', monospace;
+    --primary: #4D96FF;
+    --secondary: #FFD93D;
+    --tertiary: #6BCB77;
+    --red: #FFB4AB;
+    --neutral: #74777F;
 
-  /* Default Light Mode */
-  --bg-main: #F4F7FC;
-  --bg-surface: #FFFFFF;
-  --text-primary: #1A202C;
-  --text-secondary: #4A5568;
-  --text-muted: #94A3B8;
+    /* Default Light Mode */
+    --bg-main: #F4F7FC;
+    --bg-surface: #FFFFFF;
+    --text-primary: #1A202C;
+    --text-secondary: #4A5568;
+    --text-muted: #94A3B8;
 
-  /* Claymorphism Effects - Light */
-  --clay-shadow-outer: 8px 8px 16px rgba(116, 119, 127, 0.18);
-  --clay-shadow-inner: inset -6px -6px 12px rgba(0, 0, 0, 0.08),
-                       inset 6px 6px 12px rgba(255, 255, 255, 0.9);
+    /* Claymorphism Effects - Light */
+    --clay-shadow-outer: 8px 8px 16px rgba(116, 119, 127, 0.18);
+    --clay-shadow-inner: inset -6px -6px 12px rgba(0, 0, 0, 0.08),
+        inset 6px 6px 12px rgba(255, 255, 255, 0.9);
 }
 
 /* Dark Mode Overrides */
 [data-theme="dark"] {
-  --bg-main: #0F172A;
-  --bg-surface: #1E293B;
-  --text-primary: #F8FAFC;
-  --text-secondary: #CBD5E1;
-  --text-muted: #64748B;
+    --bg-main: #0F172A;
+    --bg-surface: #1E293B;
+    --text-primary: #F8FAFC;
+    --text-secondary: #CBD5E1;
+    --text-muted: #64748B;
 
-  /* Claymorphism Effects - Dark */
-  --clay-shadow-outer: 10px 10px 20px rgba(0, 0, 0, 0.5);
-  --clay-shadow-inner: inset -6px -6px 12px rgba(0, 0, 0, 0.35),
-                       inset 6px 6px 12px rgba(255, 255, 255, 0.08);
+    /* Claymorphism Effects - Dark */
+    --clay-shadow-outer: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    --clay-shadow-inner: inset -6px -6px 12px rgba(0, 0, 0, 0.35),
+        inset 6px 6px 12px rgba(255, 255, 255, 0.08);
 }
 
 body {
@@ -51,13 +51,16 @@ body {
 html,
 body {
     scroll-behavior: smooth;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE / legacy Edge */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE / legacy Edge */
 }
 
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, modern Edge */
+    display: none;
+    /* Chrome, Safari, modern Edge */
 }
 
 html {
@@ -471,7 +474,7 @@ section {
     letter-spacing: -0.07em;
 }
 
-.section-title > p:last-child {
+.section-title>p:last-child {
     margin-top: 18px;
     color: var(--text-secondary);
     font-size: clamp(1rem, 2vw, 1.2rem);
@@ -839,6 +842,7 @@ section {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     .modal-overlay,
     .modal-card {
         transition-duration: 0.01ms;
@@ -1180,6 +1184,7 @@ section {
 }
 
 @keyframes wave {
+
     0%,
     100% {
         transform: rotate(0deg);

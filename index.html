@@ -1,215 +1,228 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset='UTF-8'>
-        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-        <link rel='stylesheet' href='style.css'>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/maple-mono@5.2.6/index.css"/>
-        <title>Idan Gilboa — Fullstack Developer</title>
-    </head>
-    <body>
-        <nav>
-            <div class="navigations">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-                <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle dark mode">
-                    <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <circle cx="12" cy="12" r="4.5"></circle>
-                        <line x1="12" y1="2.5" x2="12" y2="5"></line>
-                        <line x1="12" y1="19" x2="12" y2="21.5"></line>
-                        <line x1="4.2" y1="4.2" x2="6" y2="6"></line>
-                        <line x1="18" y1="18" x2="19.8" y2="19.8"></line>
-                        <line x1="2.5" y1="12" x2="5" y2="12"></line>
-                        <line x1="19" y1="12" x2="21.5" y2="12"></line>
-                        <line x1="4.2" y1="19.8" x2="6" y2="18"></line>
-                        <line x1="18" y1="6" x2="19.8" y2="4.2"></line>
-                    </svg>
-                    <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d="M20.5 14.2A8.5 8.5 0 1 1 9.8 3.5a7 7 0 0 0 10.7 10.7Z"></path>
-                    </svg>
-                </button>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href='style.css'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/maple-mono@5.2.6/index.css" />
+    <title>Idan Gilboa — Fullstack Developer</title>
+</head>
+
+<body>
+    <nav>
+        <div class="navigations">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+            <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle dark mode">
+                <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="4.5"></circle>
+                    <line x1="12" y1="2.5" x2="12" y2="5"></line>
+                    <line x1="12" y1="19" x2="12" y2="21.5"></line>
+                    <line x1="4.2" y1="4.2" x2="6" y2="6"></line>
+                    <line x1="18" y1="18" x2="19.8" y2="19.8"></line>
+                    <line x1="2.5" y1="12" x2="5" y2="12"></line>
+                    <line x1="19" y1="12" x2="21.5" y2="12"></line>
+                    <line x1="4.2" y1="19.8" x2="6" y2="18"></line>
+                    <line x1="18" y1="6" x2="19.8" y2="4.2"></line>
+                </svg>
+                <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M20.5 14.2A8.5 8.5 0 1 1 9.8 3.5a7 7 0 0 0 10.7 10.7Z"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <section id="home">
+        <div class="main">
+            <div class="profile-card">
+                <div class="avatar" aria-label="Idan profile avatar">IG</div>
+                <span class="israel-flag" aria-label="Israel flag">🇮🇱</span>
             </div>
-        </nav>
 
-        <section id="home">
-            <div class="main">
-                <div class="profile-card">
-                    <div class="avatar" aria-label="Idan profile avatar">IG</div>
-                    <span class="israel-flag" aria-label="Israel flag">🇮🇱</span>
-                </div>
-
-                <div class="intro">
-                    <p class="eyebrow">fullstack developer</p>
-                    <h1>Hello <span class="waving-hand-emoji" aria-hidden="true">👋</span>,<br>I'm Idan</h1>
-                    <p class="short-about">I build clean, playful web experiences with soft visuals, smooth interactions, and thoughtful details.</p>
-                </div>
-
-                <div class="tech-stack" aria-label="Tech stack">
-                    <article class="stack-card">
-                        <div class="stack-heading">
-                            <span class="stack-icon">⌘</span>
-                            <h2>Languages</h2>
-                        </div>
-                        <ul class="stack-list">
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>JavaScript</li>
-                            <li>TypeScript</li>
-                            <li>C#</li>
-                            <li>C++</li>
-                            <li>Python</li>
-                            <li>SQL</li>
-                        </ul>
-                    </article>
-
-                    <article class="stack-card">
-                        <div class="stack-heading">
-                            <span class="stack-icon">✦</span>
-                            <h2>Tools</h2>
-                        </div>
-                        <ul class="stack-list">
-                            <li>React</li>
-                            <li>Git</li>
-                            <li>GitHub</li>
-                            <li>Supabase</li>
-                            <li>Zed</li>
-                            <li>Figma</li>
-                            <li>Node.js</li>
-                            <li>AI</li>
-                        </ul>
-                    </article>
-                </div>
-
-                <ul class="socials" aria-label="Social links">
-                    <li><a href="https://github.com/w0x7y" aria-label="GitHub profile">GitHub</a></li>
-                    <li><a href="#" aria-label="LinkedIn profile">LinkedIn</a></li>
-                    <li><a href="https://leetcode.com/u/w0x7y/" aria-label="LeetCode profile">LeetCode</a></li>
-                </ul>
+            <div class="intro">
+                <p class="eyebrow">fullstack developer</p>
+                <h1>Hello <span class="waving-hand-emoji" aria-hidden="true">👋</span>,<br>I'm Idan</h1>
+                <p class="short-about">I build clean, playful web experiences with soft visuals, smooth interactions,
+                    and thoughtful details.</p>
             </div>
-        </section>
-        <section id="about">
-            <div class="about-content">
-                <div class="section-title">
-                    <h2>How I got here</h2>
-                    <p>A quick map of the steps that shaped how I learn, build, and solve problems.</p>
-                </div>
 
-                <div class="journey-map" aria-label="Developer journey timeline">
-                    <article class="journey-point">
-                        <span class="journey-dot">01</span>
-                        <div class="journey-card">
-                            <p class="journey-stage">First steps</p>
-                            <h3>High school</h3>
-                            <p>I studied at <a href="https://schools.ort.org.il/ort-guttman/">Ort Gotman</a> in a technology-focused class, where I learned Python, C#, SQL, and the basics of HTML, CSS, and JavaScript.</p>
-                        </div>
-                    </article>
+            <div class="tech-stack" aria-label="Tech stack">
+                <article class="stack-card">
+                    <div class="stack-heading">
+                        <span class="stack-icon">⌘</span>
+                        <h2>Languages</h2>
+                    </div>
+                    <ul class="stack-list">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>TypeScript</li>
+                        <li>C#</li>
+                        <li>C++</li>
+                        <li>Python</li>
+                        <li>SQL</li>
+                    </ul>
+                </article>
 
-                    <article class="journey-point">
-                        <span class="journey-dot">02</span>
-                        <div class="journey-card">
-                            <p class="journey-stage">Got hooked</p>
-                            <h3>Self Learning</h3>
-                            <p>Since 7th grade, I have kept learning new languages, tools, and skills that help me grow as a developer and builder.</p>
-                        </div>
-                    </article>
-
-                    <article class="journey-point">
-                        <span class="journey-dot">03</span>
-                        <div class="journey-card">
-                            <p class="journey-stage">Client work</p>
-                            <h3>Moved into real projects</h3>
-                            <p>During the summer, I started creating websites for local shops and businesses, which helped me improve my skills and learn how to communicate with real clients.</p>
-                        </div>
-                    </article>
-
-                    <article class="journey-point">
-                        <span class="journey-dot">04</span>
-                        <div class="journey-card">
-                            <p class="journey-stage">Now</p>
-                            <h3>Building polished experiences</h3>
-                            <p>Today I focus on clean code, playful design, smooth UX/UI, and shipping products that feel useful, thoughtful, and good to use.</p>
-                        </div>
-                    </article>
-                </div>
+                <article class="stack-card">
+                    <div class="stack-heading">
+                        <span class="stack-icon">✦</span>
+                        <h2>Tools</h2>
+                    </div>
+                    <ul class="stack-list">
+                        <li>React</li>
+                        <li>Git</li>
+                        <li>GitHub</li>
+                        <li>Supabase</li>
+                        <li>Zed</li>
+                        <li>Figma</li>
+                        <li>Node.js</li>
+                        <li>AI</li>
+                    </ul>
+                </article>
             </div>
-        </section>
-        <section id="projects">
-            <div class="projects-content">
-                <div class="section-title">
-                    <h2>Things I've built</h2>
-                    <p>A few projects I've worked on, from client sites to personal experiments.</p>
-                </div>
 
-                <div class="projects-grid" id="projectsGrid" aria-label="Project list"></div>
-
-                <button type="button" class="view-more-btn" id="viewMoreBtn">View more</button>
+            <ul class="socials" aria-label="Social links">
+                <li><a href="https://github.com/w0x7y" aria-label="GitHub profile">GitHub</a></li>
+                <li><a href="#" aria-label="LinkedIn profile">LinkedIn</a></li>
+                <li><a href="https://leetcode.com/u/w0x7y/" aria-label="LeetCode profile">LeetCode</a></li>
+            </ul>
+        </div>
+    </section>
+    <section id="about">
+        <div class="about-content">
+            <div class="section-title">
+                <h2>How I got here</h2>
+                <p>A quick map of the steps that shaped how I learn, build, and solve problems.</p>
             </div>
-        </section>
 
-        <div class="modal-overlay" id="projectsModalOverlay">
-            <div class="modal-card" role="dialog" aria-modal="true" aria-label="More projects">
-                <button type="button" class="modal-close" id="projectsModalClose" aria-label="Close popup">&times;</button>
-                <div class="modal-header">
-                    <h2>All projects</h2>
-                    <p>Pick a project on the left to see more about it.</p>
+            <div class="journey-map" aria-label="Developer journey timeline">
+                <article class="journey-point">
+                    <span class="journey-dot">01</span>
+                    <div class="journey-card">
+                        <p class="journey-stage">First steps</p>
+                        <h3>High school</h3>
+                        <p>I studied at <a href="https://schools.ort.org.il/ort-guttman/">Ort Gotman</a> in a
+                            technology-focused class, where I learned Python, C#, SQL, and the basics of HTML, CSS, and
+                            JavaScript.</p>
+                    </div>
+                </article>
+
+                <article class="journey-point">
+                    <span class="journey-dot">02</span>
+                    <div class="journey-card">
+                        <p class="journey-stage">Got hooked</p>
+                        <h3>Self Learning</h3>
+                        <p>Since 7th grade, I have kept learning new languages, tools, and skills that help me grow as a
+                            developer and builder.</p>
+                    </div>
+                </article>
+
+                <article class="journey-point">
+                    <span class="journey-dot">03</span>
+                    <div class="journey-card">
+                        <p class="journey-stage">Client work</p>
+                        <h3>Moved into real projects</h3>
+                        <p>During the summer, I started creating websites for local shops and businesses, which helped
+                            me improve my skills and learn how to communicate with real clients.</p>
+                    </div>
+                </article>
+
+                <article class="journey-point">
+                    <span class="journey-dot">04</span>
+                    <div class="journey-card">
+                        <p class="journey-stage">Now</p>
+                        <h3>Building polished experiences</h3>
+                        <p>Today I focus on clean code, playful design, smooth UX/UI, and shipping products that feel
+                            useful, thoughtful, and good to use.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+    <section id="projects">
+        <div class="projects-content">
+            <div class="section-title">
+                <h2>Things I've built</h2>
+                <p>A few projects I've worked on, from client sites to personal experiments.</p>
+            </div>
+
+            <div class="projects-grid" id="projectsGrid" aria-label="Project list"></div>
+
+            <button type="button" class="view-more-btn" id="viewMoreBtn">View more</button>
+        </div>
+    </section>
+
+    <div class="modal-overlay" id="projectsModalOverlay">
+        <div class="modal-card" role="dialog" aria-modal="true" aria-label="More projects">
+            <button type="button" class="modal-close" id="projectsModalClose" aria-label="Close popup">&times;</button>
+            <div class="modal-header">
+                <h2>All projects</h2>
+                <p>Pick a project on the left to see more about it.</p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-list" id="modalProjectsList" aria-label="All projects"></div>
+                <div class="modal-detail" id="modalProjectDetail" aria-live="polite"></div>
+            </div>
+        </div>
+    </div>
+    <section id="contact">
+        <div class="contact-content">
+            <div class="section-title">
+                <h2>Let's talk</h2>
+                <p>Have a project in mind, or just want to say hi? I'd love to hear from you.</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info" aria-label="Contact details">
+                    <article class="contact-info-card">
+                        <span class="contact-info-icon">✉</span>
+                        <div>
+                            <p class="contact-info-label">Email</p>
+                            <p class="contact-info-value" id="contactEmailText">idangilb@gmail.com</p>
+                        </div>
+                    </article>
+
+                    <article class="contact-info-card">
+                        <span class="contact-info-icon">◎</span>
+                        <div>
+                            <p class="contact-info-label">Location</p>
+                            <p class="contact-info-value">Israel</p>
+                        </div>
+                    </article>
+
+                    <article class="contact-info-card">
+                        <span class="contact-info-icon">●</span>
+                        <div>
+                            <p class="contact-info-label">Status</p>
+                            <p class="contact-info-value">Open to new projects!</p>
+                        </div>
+                    </article>
                 </div>
-                <div class="modal-body">
-                    <div class="modal-list" id="modalProjectsList" aria-label="All projects"></div>
-                    <div class="modal-detail" id="modalProjectDetail" aria-live="polite"></div>
+
+                <div class="contact-actions">
+                    <a class="contact-cta" href="mailto:idangilb@gmail.com" id="contactMailBtn">Send me an email</a>
+                    <button type="button" class="contact-copy-btn" id="contactCopyBtn"
+                        data-default-label="Copy email address" data-copied-label="Copied to clipboard!">Copy email
+                        address</button>
+
+                    <ul class="socials contact-socials" aria-label="Social links">
+                        <li><a href="https://github.com/w0x7y" aria-label="GitHub profile">GitHub</a></li>
+                        <li><a href="#" aria-label="LinkedIn profile">LinkedIn</a></li>
+                        <li><a href="#" aria-label="Discord profile">Discord</a></li>
+                        <li><a href="#" aria-label="X profile">X</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
-        <section id="contact">
-            <div class="contact-content">
-                <div class="section-title">
-                    <h2>Let's talk</h2>
-                    <p>Have a project in mind, or just want to say hi? I'd love to hear from you.</p>
-                </div>
+    </section>
 
-                <div class="contact-grid">
-                    <div class="contact-info" aria-label="Contact details">
-                        <article class="contact-info-card">
-                            <span class="contact-info-icon">✉</span>
-                            <div>
-                                <p class="contact-info-label">Email</p>
-                                <p class="contact-info-value" id="contactEmailText">idangilb@gmail.com</p>
-                            </div>
-                        </article>
+    <script src='script.js'></script>
+</body>
 
-                        <article class="contact-info-card">
-                            <span class="contact-info-icon">◎</span>
-                            <div>
-                                <p class="contact-info-label">Location</p>
-                                <p class="contact-info-value">Israel</p>
-                            </div>
-                        </article>
-
-                        <article class="contact-info-card">
-                            <span class="contact-info-icon">●</span>
-                            <div>
-                                <p class="contact-info-label">Status</p>
-                                <p class="contact-info-value">Open to new projects</p>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="contact-actions">
-                        <a class="contact-cta" href="mailto:idangilb@gmail.com" id="contactMailBtn">Send me an email</a>
-                        <button type="button" class="contact-copy-btn" id="contactCopyBtn" data-default-label="Copy email address" data-copied-label="Copied to clipboard!">Copy email address</button>
-
-                        <ul class="socials contact-socials" aria-label="Social links">
-                            <li><a href="https://github.com/w0x7y" aria-label="GitHub profile">GitHub</a></li>
-                            <li><a href="#" aria-label="LinkedIn profile">LinkedIn</a></li>
-                            <li><a href="#" aria-label="Discord profile">Discord</a></li>
-                            <li><a href="#" aria-label="X profile">X</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <script src='script.js'></script>
-    </body>
 </html>
