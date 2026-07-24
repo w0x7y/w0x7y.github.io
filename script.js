@@ -78,6 +78,16 @@ const projects = [
   }
 ];
 
+const htmlDocumant = document.querySelector('html')
+
+function themeSwitch() {
+  if (htmlDocumant.hasAttribute("data-theme")) {
+    htmlDocumant.removeAttribute("data-theme");
+  } else {
+    htmlDocumant.setAttribute("data-theme", "dark")
+  }
+}
+
 function createProjectThumb(project) {
     return project.imageUrl
         ? `<img class="project-image" src="${project.imageUrl}" alt="${project.title} preview">`
