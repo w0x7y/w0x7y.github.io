@@ -237,3 +237,43 @@ if (viewMoreBtn && projectsModalOverlay && projectsModalClose) {
         }
     });
 }
+
+// Contact: copy email address to clipboard
+const contactCopyBtn = document.getElementById('contactCopyBtn');
+const contactEmailText = document.getElementById('contactEmailText');
+
+if (contactCopyBtn && contactEmailText) {
+    let copyResetTimer = null;
+
+    contactCopyBtn.addEventListener('click', async () => {
+        const email = contactEmailText.textContent.trim();
+        const defaultLabel = contactCopyBtn.dataset.defaultLabel || 'Copy email address';
+        const copiedLabel = contactCopyBtn.dataset.copiedLabel || 'Copied to clipboard!';
+
+        try {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                await navigator.clipboard.writeText(email);
+            } else {
+                const tempInput = document.createElement('textarea');
+                tempInput.value = email;
+                tempInput.style.position = 'fixed';
+                tempInput.style.opacity = '0';
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand('copy');
+                document.body.removeChild(tempInput);
+            }
+
+            contactCopyBtn.textContent = copiedLabel;
+            contactCopyBtn.classList.add('is-copied');
+
+            if (copyResetTimer) clearTimeout(copyResetTimer);
+            copyResetTimer = setTimeout(() => {
+                contactCopyBtn.textContent = defaultLabel;
+                contactCopyBtn.classList.remove('is-copied');
+            }, 2000);
+        } catch (err) {
+            console.error('Could not copy email:', err);
+        }
+    });
+}
