@@ -88,6 +88,12 @@ function themeSwitch() {
   }
 }
 
+const themeToggleBtn = document.getElementById('themeToggleBtn');
+
+if (themeToggleBtn) {
+  themeToggleBtn.addEventListener('click', themeSwitch);
+}
+
 function createProjectThumb(project) {
     return project.imageUrl
         ? `<img class="project-image" src="${project.imageUrl}" alt="${project.title} preview">`
