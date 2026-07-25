@@ -20,12 +20,9 @@ My personal portfolio site — a single-page site built with plain HTML, CSS, an
 - **Light/dark mode** — toggled via a `data-theme` attribute on `<html>`, no page reload
 - **Projects modal** — a "view more" popup with a project list on the left and full details on the right
 - **Scroll-triggered animations** — sections, cards, and lists fade/rise into view as you scroll, using `IntersectionObserver`
-- **Scroll-spy navigation** — the nav bar highlights whichever section is currently in view
 - **Cursor-tilt profile card** — the avatar card tilts subtly toward the cursor on desktop
-- **Back-to-top button** — appears after scrolling down
 - **Copy-to-clipboard** contact email button
 - **Reduced-motion support** — all animations are disabled if the user has `prefers-reduced-motion` set
-- **Skip-to-content link** for keyboard users
 
 ## Running locally
 
