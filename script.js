@@ -243,6 +243,58 @@ if (viewMoreBtn && projectsModalOverlay && projectsModalClose) {
   });
 }
 
+// Scroll reveal: fade/rise elements in as they enter the viewport
+const revealTargets = document.querySelectorAll(".reveal, .reveal-stagger");
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (revealTargets.length && !prefersReducedMotion && "IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15, rootMargin: "0px 0px -60px 0px" }
+  );
+
+  revealTargets.forEach((el) => revealObserver.observe(el));
+} else {
+  // No IntersectionObserver support, or the user prefers reduced motion:
+  // just show everything immediately.
+  revealTargets.forEach((el) => el.classList.add("is-visible"));
+}
+
+// Profile card: subtle cursor-follow tilt for a bit of playful depth
+const profileCard = document.querySelector(".profile-card");
+
+if (profileCard && !prefersReducedMotion && window.matchMedia("(hover: hover)").matches) {
+  const maxTilt = 8;
+
+  const handlePointerMove = (event) => {
+    const rect = profileCard.getBoundingClientRect();
+    const relX = (event.clientX - rect.left) / rect.width - 0.5;
+    const relY = (event.clientY - rect.top) / rect.height - 0.5;
+    const rotateX = (-relY * maxTilt).toFixed(2);
+    const rotateY = (relX * maxTilt).toFixed(2);
+    profileCard.style.transform = `perspective(700px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  };
+
+  const resetTilt = () => {
+    profileCard.style.transform = "perspective(700px) rotateX(0deg) rotateY(0deg)";
+  };
+
+  // Wait for the load-in animation to finish before enabling the
+  // transform-based tilt, so the two don't fight each other.
+  profileCard.addEventListener("animationend", () => {
+    profileCard.classList.add("tilt-ready");
+    profileCard.addEventListener("mousemove", handlePointerMove);
+    profileCard.addEventListener("mouseleave", resetTilt);
+  }, { once: true });
+}
+
 // Contact: copy email address to clipboard
 const contactCopyBtn = document.getElementById("contactCopyBtn");
 const contactEmailText = document.getElementById("contactEmailText");

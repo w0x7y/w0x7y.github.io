@@ -1203,6 +1203,166 @@ section {
     }
 }
 
+/* Scroll reveal: elements fade + rise into place as they enter the viewport */
+.reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger children (project cards, journey points, stack cards, etc.) */
+.reveal-stagger>* {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-stagger.is-visible>* {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-stagger.is-visible>*:nth-child(1) {
+    transition-delay: 0.05s;
+}
+
+.reveal-stagger.is-visible>*:nth-child(2) {
+    transition-delay: 0.13s;
+}
+
+.reveal-stagger.is-visible>*:nth-child(3) {
+    transition-delay: 0.21s;
+}
+
+.reveal-stagger.is-visible>*:nth-child(4) {
+    transition-delay: 0.29s;
+}
+
+.reveal-stagger.is-visible>*:nth-child(5) {
+    transition-delay: 0.37s;
+}
+
+.reveal-stagger.is-visible>*:nth-child(6) {
+    transition-delay: 0.45s;
+}
+
+.reveal-stagger.is-visible>*:nth-child(7) {
+    transition-delay: 0.53s;
+}
+
+.reveal-stagger.is-visible>*:nth-child(8) {
+    transition-delay: 0.61s;
+}
+
+/* Home hero: fade + rise in on load. .profile-card gets an inner wrapper
+   (.profile-card-inner) for the load-in transform so it doesn't fight with
+   the cursor-tilt transform applied to .profile-card itself in JS. */
+nav {
+    opacity: 0;
+    transform: translate(-50%, -18px);
+    animation: navIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+}
+
+@keyframes navIn {
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+.profile-card {
+    opacity: 0;
+    animation: heroInCard 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+}
+
+@keyframes heroInCard {
+    from {
+        opacity: 0;
+        transform: translateY(24px) scale(0.94);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Cursor tilt (applied via JS as inline transform) needs its own transition,
+   separate from the load-in keyframes above which only run once. */
+.profile-card.tilt-ready {
+    transition: transform 0.15s ease-out;
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+.intro>* {
+    opacity: 0;
+    animation: heroIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.intro>*:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.intro>*:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.intro>*:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes heroIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Theme toggle: playful spin when switching */
+.theme-icon {
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.theme-toggle-btn:active .theme-icon {
+    transform: rotate(90deg) scale(0.85);
+}
+
+/* Avatar: subtle wobble on hover, matches the playful clay aesthetic */
+.avatar {
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.profile-card:hover .avatar {
+    transform: rotate(-4deg) scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .reveal,
+    .reveal-stagger>*,
+    .profile-card,
+    .intro>*,
+    nav,
+    .theme-icon,
+    .avatar {
+        animation: none !important;
+        transition-duration: 0.01ms !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
 section:last-of-type {
     margin-bottom: 48px;
 }
