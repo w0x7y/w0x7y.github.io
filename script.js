@@ -86,13 +86,13 @@ const projects = [
   },
 ];
 
-const htmlDocumant = document.querySelector("html");
+const htmlDocument = document.querySelector("html");
 
 function themeSwitch() {
-  if (htmlDocumant.hasAttribute("data-theme")) {
-    htmlDocumant.removeAttribute("data-theme");
+  if (htmlDocument.hasAttribute("data-theme")) {
+    htmlDocument.removeAttribute("data-theme");
   } else {
-    htmlDocumant.setAttribute("data-theme", "dark");
+    htmlDocument.setAttribute("data-theme", "dark");
   }
 }
 
