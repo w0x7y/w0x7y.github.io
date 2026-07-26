@@ -65,3 +65,11 @@ Projects live in the `projects` array at the top of `script.js`. Only the first 
 - [ ] Add a real X (Twitter) link in the contact section, or remove the link if not applicable
 - [ ] Optional: add `robots.txt` and `sitemap.xml` once the site has a real domain, for SEO
 - [ ] Optional: self-host the Maple Mono font instead of loading it from a CDN, for perf/reliability
+- [ ] Add an `og:image`/`twitter:image` (and `twitter:card` = `summary_large_image`) so social shares show a preview card, not just text
+- [ ] Add `lang="en"` to the `<html>` tag for accessibility/SEO
+- [ ] Add a `<link rel="canonical">` tag once the site has a real domain
+- [ ] Add `apple-touch-icon` and a favicon `.ico` fallback for broader device/browser support
+- [ ] Add a `manifest.json` (site name, icons, theme color) for installable/PWA-style support
+- [ ] Add a skip-to-content link for keyboard/screen-reader users
+- [ ] Add a custom 404 page (GitHub Pages serves plain 404 by default)
+- [ ] Mention the LICENSE in the README (file exists but isn't referenced)
