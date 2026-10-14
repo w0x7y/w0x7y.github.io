@@ -363,6 +363,10 @@ nav {
 	color: var(--rime-red);
 }
 
+.prompt-error-inline {
+	display: inline;
+}
+
 .status {
 	color: var(--rime-muted);
 }
