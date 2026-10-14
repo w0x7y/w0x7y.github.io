@@ -188,7 +188,7 @@ code {
 	align-items: center;
 	gap: 1rem 2rem;
 	width: var(--hero-width);
-	margin-top: 1rem;
+	margin-top: 0.2rem;
 
 	@media (max-width: 30rem) {
 		--photo-size: 7rem;
@@ -498,7 +498,7 @@ nav {
 	align-items: center;
 	gap: 0.5rem 1rem;
 	margin-top: 1rem;
-	padding-block: 1.25rem 1.5rem;
+	padding-block: 1.25rem 1.25rem;
 	font-size: 0.875rem;
 	color: var(--rime-muted);
 
