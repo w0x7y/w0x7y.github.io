@@ -3,12 +3,21 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="theme-color" content="#23272e" />
 		<title>I'm w0x7y :O</title>
+		<link
+			rel="preload"
+			href="./assets/fonts/iosevka-400.woff2"
+			as="font"
+			type="font/woff2"
+			crossorigin
+		/>
 		<link rel="stylesheet" href="./styles/style.css" />
+		<script src="./scripts/app.js" defer></script>
 	</head>
 	<body>
-		<div id="profile" class="profile">
-			<picture class="profile-picture-wraper">
+		<header class="hero">
+			<picture class="profile-picture-wrapper">
 				<source srcset="./assets/pfp.avif" type="image/avif" />
 				<source srcset="./assets/pfp.webp" type="image/webp" />
 				<img
@@ -17,19 +26,60 @@
 					src="./assets/pfp.webp"
 				/>
 			</picture>
-			<h2 class="profile-name">
-				w0x7y
-				<span id="profile-smiley" class="profile-smiley">:O</span>
-			</h2>
-			<p class="profile-about-me">something something code</p>
-			<div class="profile-text-israel-map"></div>
-		</div>
-		<nav>
-			<a href="#">readme.md</a>
-			<a href="#">projects/</a>
-			<a href="#">github/</a>
-			<a href="#">resume/</a>
-		</nav>
+			<div id="profile" class="profile">
+				<h2 class="profile-name">
+					<span class="profile-handle">w0x7y</span>
+					<span id="profile-smiley" class="profile-smiley">:O</span>
+				</h2>
+				<p class="profile-about-me">something something code</p>
+			</div>
+			<div class="profile-text-israel-map">
+				<p class="map-label">
+					<span class="map-label-caption">based in</span>
+					<span class="map-label-place">{israel}</span>
+				</p>
+				<pre role="img" aria-label="Map of Israel">                1
+              0100
+         010000110
+        0010000100
+        0011001
+       00010000
+       1111111
+      00001111
+      10010101
+     100111110
+    0110011111
+  011001001001
+1100111011111
+ 000000001011
+  00111001111
+  1011000010
+   01000001
+   00010111
+    100111
+     11000
+      1110
+      001
+       00</pre>
+			</div>
+			<nav>
+				<a href="#readme">readme.md</a>
+				<a href="#projects">projects/</a>
+				<a href="#github">.github/</a>
+				<a href="#resume">resume/</a>
+			</nav>
+		</header>
 		<main id="main-content" class="main-content"></main>
+		<footer class="site-footer">
+			<p>
+				theme:
+				<a href="https://github.com/w0x7y/Rime">rime</a>
+			</p>
+			<div class="palette" aria-hidden="true"></div>
+		</footer>
+		<template id="page-readme">
+			<p>Hi, I'm w0x7y…</p>
+		</template>
+		<template id="page-projects">…</template>
 	</body>
 </html>

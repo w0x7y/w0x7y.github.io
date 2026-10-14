@@ -1,24 +1,6 @@
 /* Rime: Soft and muted pastels for long sessions. */
 /* https://github.com/w0x7y/Rime */
 :root {
-	/* base16 slots */
-	--base00: #23272e;
-	--base01: #2b3038;
-	--base02: #3a404b;
-	--base03: #6b768c;
-	--base04: #9aa4b6;
-	--base05: #c3ccd9;
-	--base06: #dce2eb;
-	--base07: #f0f3f8;
-	--base08: #d98a9c;
-	--base09: #e8a8cc;
-	--base0A: #e4d098;
-	--base0B: #9ad8ac;
-	--base0C: #7cc4d0;
-	--base0D: #7aa4e4;
-	--base0E: #bb98d6;
-	--base0F: #7987a1;
-
 	/* colour names */
 	--rime-bg: #23272e;
 	--rime-bg-alt: #2b3038;
@@ -38,6 +20,27 @@
 	--rime-steel: #7987a1;
 }
 
+:root {
+	--profile-width: min(100%, 45rem);
+	--dashes: "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------";
+}
+
+@font-face {
+	font-family: "Iosevka";
+	src: url("../assets/fonts/iosevka-400.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Iosevka";
+	src: url("../assets/fonts/iosevka-700.woff2") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
 /* Global reset */
 *,
 *::before,
@@ -45,15 +48,23 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	color: var(--rime-fg);
 }
 
 html {
+	color-scheme: dark;
 	scroll-behavior: smooth;
+	scrollbar-color: var(--rime-bg-sel) var(--rime-bg);
+	accent-color: var(--rime-blue);
 }
 
 body {
+	display: flex;
+	flex-direction: column;
 	min-height: 100vh;
+	font-family: "Iosevka", ui-monospace, Menlo, Consolas, monospace;
+	color: var(--rime-fg);
+	padding-inline: 1rem;
+	overflow-x: clip;
 	line-height: 1.5;
 	-webkit-font-smoothing: antialiased;
 }
@@ -79,26 +90,91 @@ select {
 	font: inherit;
 }
 
-.profile {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-rows: auto 1fr;
-
-	grid-template-areas:
-		"picture name map"
-		"picture about map";
-
-	gap: 4px;
-	width: min(100%, 45rem);
-	max-height: 275px;
-	margin: 1rem auto 0;
-	padding: 4px;
-	background: var(--rime-bg);
+::selection {
+	background: var(--rime-bg-sel);
+	color: var(--rime-fg-bright);
 }
 
-.profile-picture-wraper {
+:focus-visible {
+	outline: 1px dashed var(--rime-blue);
+	outline-offset: 2px;
+}
+
+h1,
+h2,
+h3,
+strong {
+	color: var(--rime-fg-bright);
+}
+
+a {
+	color: var(--rime-blue);
+	text-decoration: underline dotted;
+	text-underline-offset: 0.2em;
+
+	&:hover {
+		color: var(--rime-cyan);
+		text-decoration-style: solid;
+	}
+}
+
+code {
+	padding: 0.1em 0.3em;
+	background: var(--rime-bg-alt);
+	color: var(--rime-green);
+}
+
+.hero,
+.main-content,
+.site-footer {
+	width: var(--profile-width);
+	margin-inline: auto;
+}
+
+.hero {
+	--photo-size: 11rem;
+
+	display: grid;
+	grid-template-columns: var(--photo-size) minmax(0, 1fr) auto;
+
+	grid-template-areas:
+		"picture profile map"
+		"nav nav nav"
+		"line line line";
+
+	align-items: center;
+	gap: 1rem 1.25rem;
+	margin-top: 1rem;
+
+	@media (max-width: 30rem) {
+		--photo-size: 7rem;
+	}
+
+	&::after {
+		content: var(--dashes);
+		grid-area: line;
+		justify-self: center;
+		width: min(100vw, calc(var(--profile-width) * 1.5));
+		overflow: hidden;
+		white-space: nowrap;
+		line-height: 1;
+		color: var(--rime-comment);
+	}
+}
+
+.profile {
+	grid-area: profile;
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+}
+
+.profile-picture-wrapper {
 	grid-area: picture;
+	width: var(--photo-size);
+	height: var(--photo-size);
 	overflow: hidden;
+	background: var(--rime-bg-alt);
 }
 
 .pfp {
@@ -109,25 +185,182 @@ select {
 }
 
 .profile-name {
-	grid-area: name;
-	padding: 0.5rem 0.75rem;
+	font-size: 1.5rem;
 	line-height: 1.2;
 }
 
+.profile-handle {
+	color: var(--rime-violet);
+}
+
+.profile-smiley {
+	color: var(--rime-yellow);
+}
+
 .profile-about-me {
-	grid-area: about;
-	padding: 0.5rem 0.75rem;
+	color: var(--rime-muted);
 }
 
 .profile-text-israel-map {
 	grid-area: map;
+	display: flex;
+	align-items: center;
+
+	pre {
+		margin-inline: 2.5rem;
+		font-family: inherit;
+		font-size: 0.6rem;
+		line-height: 1;
+		color: var(--rime-muted);
+	}
+
+	@media (max-width: 30rem) {
+		flex-direction: column;
+		gap: 0.5rem;
+
+		pre {
+			margin-inline: 0;
+			font-size: 0.45rem;
+		}
+	}
 }
 
-.profile-picture-wraper,
-.profile-name,
-.profile-about-me,
-.profile-text-israel-map {
-	background: var(--rime-bg-alt);
-	min-width: 0;
-	min-height: 0;
+.map-label {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.25rem;
+	line-height: 1.2;
+
+	@media (max-width: 30rem) {
+		align-items: center;
+	}
+}
+
+.map-label-caption {
+	font-size: 0.875rem;
+	color: var(--rime-muted);
+}
+
+.map-label-place {
+	font-size: 1.25rem;
+	color: var(--rime-cyan);
+}
+
+nav {
+	grid-area: nav;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 0.25rem 1.5rem;
+	padding-block: 0.5rem;
+	font-size: 1.25rem;
+
+	@media (max-width: 30rem) {
+		gap: 0.25rem 1rem;
+		font-size: 1rem;
+	}
+
+	a {
+		color: var(--rime-fg);
+		text-decoration: none;
+
+		&:hover {
+			color: var(--rime-blue);
+			text-decoration: underline dotted;
+		}
+
+		&[aria-current="page"] {
+			color: var(--rime-blue);
+			text-decoration: underline solid;
+		}
+	}
+}
+
+.main-content {
+	flex: 1;
+	margin-top: 1.5rem;
+
+	> * {
+		max-width: 70ch;
+	}
+
+	> * + * {
+		margin-top: 0.75rem;
+	}
+
+	p,
+	li {
+		text-wrap: pretty;
+	}
+}
+
+.prompt {
+	font-size: inherit;
+	font-weight: 400;
+	overflow-wrap: anywhere;
+}
+
+.prompt-path {
+	color: var(--rime-green);
+}
+
+.prompt-symbol {
+	color: var(--rime-pink);
+}
+
+.prompt-command {
+	color: var(--rime-blue);
+}
+
+.prompt-target {
+	color: var(--rime-fg-bright);
+}
+
+.prompt-error {
+	display: block;
+	color: var(--rime-red);
+}
+
+
+.site-footer {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	gap: 0.5rem 1rem;
+	margin-top: 3rem;
+	padding-block: 1.25rem 1.5rem;
+	font-size: 0.875rem;
+	color: var(--rime-muted);
+
+	&::before {
+		content: var(--dashes);
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		overflow: hidden;
+		white-space: nowrap;
+		font-size: 1rem;
+		line-height: 1;
+		color: var(--rime-comment);
+	}
+}
+
+.palette {
+	width: 8rem;
+	height: 0.75rem;
+	background: linear-gradient(
+		90deg,
+		var(--rime-red) 0 12.5%,
+		var(--rime-pink) 0 25%,
+		var(--rime-yellow) 0 37.5%,
+		var(--rime-green) 0 50%,
+		var(--rime-cyan) 0 62.5%,
+		var(--rime-blue) 0 75%,
+		var(--rime-violet) 0 87.5%,
+		var(--rime-steel) 0 100%
+	);
 }
