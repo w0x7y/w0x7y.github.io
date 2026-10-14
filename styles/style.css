@@ -89,8 +89,9 @@ select {
 		"picture about map";
 
 	gap: 4px;
-	width: min(100%, 56rem);
-	min-height: 300px;
+	width: min(100%, 45rem);
+	max-height: 275px;
+	margin: 1rem auto 0;
 	padding: 4px;
 	background: var(--rime-bg);
 }
