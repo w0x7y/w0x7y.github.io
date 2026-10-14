@@ -4,6 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="theme-color" content="#23272e" />
+		<link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
 		<title>I'm w0x7y :O</title>
 		<link
 			rel="preload"
@@ -13,6 +14,13 @@
 			crossorigin
 		/>
 		<link rel="stylesheet" href="./styles/style.css" />
+		<script>
+			try {
+				if (localStorage.getItem("theme") === "light") {
+					document.documentElement.dataset.theme = "light";
+				}
+			} catch {}
+		</script>
 		<script src="./scripts/app.js" defer></script>
 	</head>
 	<body>
@@ -31,14 +39,18 @@
 					<span class="profile-handle">w0x7y</span>
 					<span id="profile-smiley" class="profile-smiley">:O</span>
 				</h2>
-				<p class="profile-about-me">something something code</p>
+				<p class="profile-about-me">
+					I'm a 17 year old student and a self-taught full-stack
+					developer
+				</p>
 			</div>
 			<div class="profile-text-israel-map">
 				<p class="map-label">
 					<span class="map-label-caption">based in</span>
 					<span class="map-label-place">{israel}</span>
 				</p>
-				<pre role="img" aria-label="Map of Israel">                1
+				<pre role="img" aria-label="Map of Israel">
+                1
               0100
          010000110
         0010000100
@@ -63,23 +75,82 @@
        00</pre>
 			</div>
 			<nav>
-				<a href="#readme">readme.md</a>
-				<a href="#projects">projects/</a>
-				<a href="#github">.github/</a>
-				<a href="#resume">resume/</a>
+				<a class="ls-file" href="#readme">readme.md</a>
+				<a class="ls-dir" href="#projects">projects/</a>
+				<a class="ls-dir" href="#github">.github/</a>
+				<a class="ls-dir" href="#resume">resume/</a>
+				<a class="ls-exec" href="#links">links.sh</a>
 			</nav>
 		</header>
 		<main id="main-content" class="main-content"></main>
 		<footer class="site-footer">
 			<p>
 				theme:
-				<a href="https://github.com/w0x7y/Rime">rime</a>
+				<a id="theme-name" href="https://github.com/w0x7y/Rime">rime</a>
 			</p>
+			<div class="theme-switch" role="group" aria-label="Colour theme">
+				<button type="button" data-theme-option="dark">dark</button>
+				<span aria-hidden="true">/</span>
+				<button type="button" data-theme-option="light">light</button>
+			</div>
 			<div class="palette" aria-hidden="true"></div>
 		</footer>
 		<template id="page-readme">
-			<p>Hi, I'm w0x7y…</p>
+			<p>Hi, I'm w0x7y. My real name is...</p>
+			<p class="prompt-error">cat: real_name: Permission denied</p>
+			<p>
+				You really thought I was going to dox myself like that? Maybe
+				when I turn 18, but until then I'm just w0x7y.
+			</p>
+			<p>
+				I started programming at 12, when we learned <a href="https://www.python.org">Python</a> at school. I
+				didn't really like it at first, but then I tried web dev and
+				really, and I mean <strong>REALLY</strong>, got into it. I don't know why, but I
+				loved writing <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> (I know, crazy), and it made me want
+				to keep learning. Around then I also picked up <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JS</a>, <a href="https://www.typescriptlang.org">TS</a> and, a bit
+				later, <a href="https://dev.java">Java</a>, which I liked a lot.
+			</p>
+			<p>
+				When we finished Python at school, we moved on to <a href="https://learn.microsoft.com/en-us/dotnet/csharp/">C#</a>. By then I
+				was already pretty good at solving problems, since that's around
+				when I started doing <a href="https://leetcode.com">LeetCode</a> for fun so it made school go by
+				really easily. I also started training combat sports (Muay Thai,
+				BJJ and MMA) and haven't stopped since.
+			</p>
+			<p>
+				Over the next couple of years I learned more languages: <a href="https://en.wikipedia.org/wiki/SQL">SQL</a>
+				(with <a href="https://www.postgresql.org">PostgreSQL</a> and <a href="https://sqlite.org">SQLite</a>), <a href="https://revo.lung.fyi">Revo</a> and <a href="https://en.cppreference.com/w/c">C</a>, plus <a href="https://react.dev">React</a> and tools
+				like <a href="https://tailwindcss.com">Tailwind</a> and <a href="https://expo.dev">Expo</a>. Right now I'm learning <a href="https://isocpp.org">C++</a>, <a href="https://www.rust-lang.org">Rust</a> and <a href="https://go.dev">Go</a>,
+				and ngl, it's going pretty well so far.
+			</p>
+			<p>
+				That's about it... oh wait, I also build and sell websites as a
+				side hustle, and it's going strong.
+			</p>
+			<p>
+				I've been on <a href="https://www.kernel.org">Linux</a> (<a href="https://archlinux.org">Arch</a> btw) for the past year or so, which is
+				also where I learned <a href="https://www.gnu.org/software/bash/">Bash</a>. I code in <a href="https://neovim.io">Neovim</a>, use <a href="https://github.com/subframe7536/maple-font">Maple Mono NF</a>
+				for almost everything, and my theme is of course <a href="https://github.com/w0x7y/Rime">Rime</a> (the best
+				theme on the market, no cope fr fr).
+			</p>
+			<p>
+				I feel like this is too short, but you'll have to live with it
+				(I'm not a poet). So yeah, have a nice day ;)
+			</p>
 		</template>
-		<template id="page-projects">…</template>
+		<template id="page-projects"></template>
+		<template id="page-github"></template>
+		<template id="page-links">
+			<div class="socials">
+				<ul class="socials-list">
+					<li>
+						<span class="socials-name">github</span>
+						<span class="socials-arrow" aria-hidden="true">-></span>
+						<a href="https://github.com/w0x7y">github.com/w0x7y</a>
+					</li>
+				</ul>
+				<p class="socials-note">yea, thats it...</p>
+			</div>
+		</template>
 	</body>
 </html>

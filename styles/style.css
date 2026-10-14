@@ -20,8 +20,31 @@
 	--rime-steel: #7987a1;
 }
 
+/* Rime Frost: Frost-white paper under the same cold accents, deepened to read on it. */
+:root[data-theme="light"] {
+	color-scheme: light;
+
+	--rime-bg: #eef1f5;
+	--rime-bg-alt: #e3e7ee;
+	--rime-bg-sel: #d2d8e2;
+	--rime-comment: #7f899b;
+	--rime-muted: #566073;
+	--rime-fg: #363d4a;
+	--rime-fg-bright: #272d37;
+	--rime-white: #181c23;
+	--rime-red: #b83d63;
+	--rime-pink: #a34396;
+	--rime-yellow: #866405;
+	--rime-green: #267b4f;
+	--rime-cyan: #0f7480;
+	--rime-blue: #2e62c0;
+	--rime-violet: #7650c4;
+	--rime-steel: #5f7090;
+}
+
 :root {
 	--profile-width: min(100%, 45rem);
+	--hero-width: min(100%, 56rem);
 	--dashes: "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------";
 }
 
@@ -90,6 +113,10 @@ select {
 	font: inherit;
 }
 
+[hidden] {
+	display: none !important;
+}
+
 ::selection {
 	background: var(--rime-bg-sel);
 	color: var(--rime-fg-bright);
@@ -118,6 +145,22 @@ a {
 	}
 }
 
+.main-content p a:visited {
+	color: var(--rime-violet);
+}
+
+.ls-file {
+	--ls-color: var(--rime-fg);
+}
+
+.ls-dir {
+	--ls-color: var(--rime-blue);
+}
+
+.ls-exec {
+	--ls-color: var(--rime-green);
+}
+
 code {
 	padding: 0.1em 0.3em;
 	background: var(--rime-bg-alt);
@@ -143,17 +186,20 @@ code {
 		"line line line";
 
 	align-items: center;
-	gap: 1rem 1.25rem;
+	gap: 1rem 2rem;
+	width: var(--hero-width);
 	margin-top: 1rem;
 
 	@media (max-width: 30rem) {
 		--photo-size: 7rem;
+		column-gap: 1.25rem;
 	}
 
 	&::after {
 		content: var(--dashes);
 		grid-area: line;
 		justify-self: center;
+		margin-top: -0.5rem;
 		width: min(100vw, calc(var(--profile-width) * 1.5));
 		overflow: hidden;
 		white-space: nowrap;
@@ -199,6 +245,7 @@ code {
 
 .profile-about-me {
 	color: var(--rime-muted);
+	text-wrap: balance;
 }
 
 .profile-text-israel-map {
@@ -239,7 +286,7 @@ code {
 
 .map-label-caption {
 	font-size: 0.875rem;
-	color: var(--rime-muted);
+	color: var(--rime-yellow);
 }
 
 .map-label-place {
@@ -253,37 +300,32 @@ nav {
 	flex-wrap: wrap;
 	justify-content: center;
 	gap: 0.25rem 1.5rem;
-	padding-block: 0.5rem;
+	padding-block: 0.5rem 0;
 	font-size: 1.25rem;
 
 	@media (max-width: 30rem) {
-		gap: 0.25rem 1rem;
-		font-size: 1rem;
+		gap: 0.25rem 0.75rem;
+		font-size: 0.875rem;
 	}
 
-	a {
-		color: var(--rime-fg);
+	a,
+	a:hover {
+		color: var(--ls-color, var(--rime-fg));
 		text-decoration: none;
+	}
 
-		&:hover {
-			color: var(--rime-blue);
-			text-decoration: underline dotted;
-		}
+	a:hover {
+		text-decoration: underline dotted;
+	}
 
-		&[aria-current="page"] {
-			color: var(--rime-blue);
-			text-decoration: underline solid;
-		}
+	a[aria-current="page"] {
+		text-decoration: underline solid;
 	}
 }
 
 .main-content {
 	flex: 1;
-	margin-top: 1.5rem;
-
-	> * {
-		max-width: 70ch;
-	}
+	margin-top: 1rem;
 
 	> * + * {
 		margin-top: 0.75rem;
@@ -310,11 +352,11 @@ nav {
 }
 
 .prompt-command {
-	color: var(--rime-blue);
+	color: var(--ls-color, var(--rime-blue));
 }
 
 .prompt-target {
-	color: var(--rime-fg-bright);
+	color: var(--ls-color, var(--rime-fg-bright));
 }
 
 .prompt-error {
@@ -322,15 +364,137 @@ nav {
 	color: var(--rime-red);
 }
 
+.status {
+	color: var(--rime-muted);
+}
 
-.site-footer {
-	position: relative;
+.status-loading {
+	color: var(--rime-yellow);
+}
+
+.repo-list {
+	display: grid;
+	gap: 1.25rem;
+	list-style: none;
+}
+
+.repo-head {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
+	align-items: baseline;
+	gap: 0 1rem;
+}
+
+.repo-meta {
+	font-size: 0.875rem;
+	color: var(--rime-muted);
+}
+
+.repo-stars {
+	color: var(--rime-yellow);
+}
+
+.repo-description {
+	max-width: 70ch;
+	margin-top: 0.125rem;
+	text-wrap: pretty;
+}
+
+.commit-date {
+	margin-top: 1.25rem;
+	font-size: inherit;
+	font-weight: 400;
+	color: var(--rime-violet);
+
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+.commit-list {
+	margin-top: 0.25rem;
+	list-style: none;
+}
+
+.commit {
+	padding-left: 8ch;
+	text-indent: -8ch;
+}
+
+.commit-sha {
+	color: var(--rime-yellow);
+	text-decoration: none;
+
+	&:hover {
+		color: var(--rime-yellow);
+		text-decoration: underline;
+	}
+}
+
+.commit-repo {
+	color: var(--rime-cyan);
+}
+
+.main-content:has(> .socials) {
+	display: flex;
+	flex-direction: column;
+}
+
+.socials {
+	display: grid;
+	justify-items: center;
+	gap: 0.75rem;
+	margin: auto;
+	padding-block: 2rem;
+	text-align: center;
+}
+
+.socials-list {
+	display: grid;
+	gap: 0.5rem;
+	font-size: 1.25rem;
+	list-style: none;
+}
+
+.socials-name {
+	color: var(--rime-violet);
+}
+
+.socials-arrow {
+	color: var(--rime-comment);
+}
+
+.socials-note {
+	font-size: 0.875rem;
+	color: var(--rime-muted);
+}
+
+.load-more {
+	padding: 0.25rem 0.75rem;
+	background: none;
+	border: 1px dashed var(--rime-comment);
+	color: var(--rime-blue);
+	cursor: pointer;
+
+	&:hover {
+		border-color: var(--rime-blue);
+		color: var(--rime-cyan);
+	}
+
+	&:disabled {
+		cursor: progress;
+		opacity: 0.6;
+	}
+}
+
+.site-footer {
+	position: relative;
+	display: grid;
+	grid-template-columns: 1fr auto 1fr;
 	align-items: center;
 	gap: 0.5rem 1rem;
-	margin-top: 3rem;
+	margin-top: 1rem;
 	padding-block: 1.25rem 1.5rem;
 	font-size: 0.875rem;
 	color: var(--rime-muted);
@@ -349,7 +513,32 @@ nav {
 	}
 }
 
+.theme-switch {
+	display: flex;
+	gap: 0.5ch;
+	color: var(--rime-comment);
+
+	button {
+		padding: 0;
+		background: none;
+		border: none;
+		color: var(--rime-muted);
+		cursor: pointer;
+
+		&:hover {
+			color: var(--rime-blue);
+		}
+
+		&[aria-pressed="true"] {
+			color: var(--rime-fg-bright);
+			text-decoration: underline;
+			text-underline-offset: 0.2em;
+		}
+	}
+}
+
 .palette {
+	justify-self: end;
 	width: 8rem;
 	height: 0.75rem;
 	background: linear-gradient(
