@@ -56,7 +56,8 @@ function span(className, text) {
 function readCache(key) {
 	try {
 		const cached = JSON.parse(sessionStorage.getItem(key));
-		if (cached && Date.now() - cached.time < cacheMinutes * 60_000) return cached.data;
+		if (cached && Date.now() - cached.time < cacheMinutes * 60_000)
+			return cached.data;
 	} catch {}
 	return null;
 }
@@ -117,10 +118,17 @@ function repoList(repos) {
 			parts.push(language);
 		}
 		if (repo.stars) {
-			parts.push(span("repo-stars", repo.stars === 1 ? "1 star" : `${repo.stars} stars`));
+			parts.push(
+				span(
+					"repo-stars",
+					repo.stars === 1 ? "1 star" : `${repo.stars} stars`,
+				),
+			);
 		}
 		parts.push(span("repo-date", repo.pushed));
-		parts.forEach((part, i) => meta.append(...(i ? [" · ", part] : [part])));
+		parts.forEach((part, i) =>
+			meta.append(...(i ? [" · ", part] : [part])),
+		);
 
 		head.append(name, meta);
 		item.append(head);
@@ -134,7 +142,11 @@ function repoList(repos) {
 }
 
 async function loadProjects(container, isCurrent) {
-	const status = element("p", "status status-loading", "fetching repos from github...");
+	const status = element(
+		"p",
+		"status status-loading",
+		"fetching repos from github...",
+	);
 	container.append(status);
 
 	try {
@@ -146,7 +158,11 @@ async function loadProjects(container, isCurrent) {
 	} catch (error) {
 		if (!isCurrent()) return;
 		status.replaceWith(
-			element("p", "prompt-error", `ls: cannot access 'projects/': ${error.message}`),
+			element(
+				"p",
+				"prompt-error",
+				`ls: cannot access 'projects/': ${error.message}`,
+			),
 		);
 	}
 }
@@ -159,9 +175,15 @@ function prompt(command, target, type) {
 		" ",
 		span("prompt-symbol", ">"),
 		" ",
-		span(command.startsWith("./") ? "prompt-command ls-exec" : "prompt-command", command),
+		span(
+			command.startsWith("./")
+				? "prompt-command ls-exec"
+				: "prompt-command",
+			command,
+		),
 	);
-	if (target) line.append(" ", span(`prompt-target ${type ?? ""}`.trim(), target));
+	if (target)
+		line.append(" ", span(`prompt-target ${type ?? ""}`.trim(), target));
 	return line;
 }
 
@@ -203,7 +225,11 @@ function commitItem(commit) {
 }
 
 async function loadCommits(container, isCurrent) {
-	const status = element("p", "status status-loading", "fetching commits from github...");
+	const status = element(
+		"p",
+		"status status-loading",
+		"fetching commits from github...",
+	);
 	const log = element("div", "commit-log");
 	const error = element("p", "prompt-error");
 	const more = element("button", "load-more", "load more");
@@ -237,7 +263,8 @@ async function loadCommits(container, isCurrent) {
 			shown += commits.length;
 			status.classList.remove("status-loading");
 			status.textContent = `showing ${shown} of ${total} commits`;
-			more.hidden = commits.length === 0 || shown >= Math.min(total, searchLimit);
+			more.hidden =
+				commits.length === 0 || shown >= Math.min(total, searchLimit);
 		} catch (err) {
 			if (!isCurrent()) return;
 			if (shown === 0) status.hidden = true;
@@ -266,7 +293,10 @@ function render() {
 
 	const content = template
 		? template.content.cloneNode(true)
-		: span("prompt-error", `${command}: ${argument}: No such file or directory`);
+		: span(
+				"prompt-error",
+				`${command}: ${argument}: No such file or directory`,
+			);
 
 	main.replaceChildren(prompt(command, argument, type), content);
 
@@ -294,10 +324,15 @@ function applyTheme(theme) {
 	else delete root.dataset.theme;
 
 	themeButtons.forEach((button) => {
-		button.setAttribute("aria-pressed", button.dataset.themeOption === theme);
+		button.setAttribute(
+			"aria-pressed",
+			button.dataset.themeOption === theme,
+		);
 	});
 	themeName.textContent = themeLabels[theme];
-	themeColor.content = getComputedStyle(root).getPropertyValue("--rime-bg").trim();
+	themeColor.content = getComputedStyle(root)
+		.getPropertyValue("--rime-bg")
+		.trim();
 }
 
 themeButtons.forEach((button) => {
@@ -310,7 +345,9 @@ themeButtons.forEach((button) => {
 	});
 });
 
-applyTheme(document.documentElement.dataset.theme === "light" ? "light" : "dark");
+applyTheme(
+	document.documentElement.dataset.theme === "light" ? "light" : "dark",
+);
 
 smiley.parentElement.addEventListener("pointerenter", () => {
 	smiley.textContent = hoverFace;
