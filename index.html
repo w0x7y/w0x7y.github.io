@@ -102,14 +102,7 @@
 			<div class="palette" aria-hidden="true"></div>
 		</footer>
 		<template id="page-readme">
-			<p>
-				Hi, I'm w0x7y. My real name is...
-				<span class="prompt-error prompt-error-inline">cat: real_name: Permission denied</span>
-			</p>
-			<p>
-				You really thought I was going to dox myself like that? Maybe
-				when I turn 18, but until then I'm just w0x7y.
-			</p>
+			<p>Hi, I'm Idan Gilboa, but online I go by w0x7y.</p>
 			<p>
 				I started programming at 12, when we learned
 				<a href="https://www.python.org">Python</a> at school. I didn't
@@ -181,6 +174,250 @@
 		</template>
 		<template id="page-projects"></template>
 		<template id="page-github"></template>
+		<template id="page-resume">
+			<header class="resume-header">
+				<h2 class="resume-name">Idan Gilboa</h2>
+				<p class="resume-contact">
+					<a href="mailto:idangilb@gmail.com">idangilb@gmail.com</a>
+					<span aria-hidden="true">·</span>
+					<a target="_blank" href="https://github.com/w0x7y"
+						>github.com/w0x7y</a
+					>
+				</p>
+			</header>
+			<section class="resume-section">
+				<h2 class="resume-heading">education</h2>
+				<div class="resume-entry">
+					<div class="resume-head">
+						<h3 class="resume-title">High school, Israel</h3>
+						<span class="resume-meta">graduating 2028</span>
+					</div>
+					<ul class="resume-points">
+						<li>Majors in computer science, cyber and physics</li>
+						<li>5-unit math and 5-unit English</li>
+					</ul>
+				</div>
+			</section>
+			<section class="resume-section">
+				<h2 class="resume-heading">experience</h2>
+				<div class="resume-entry">
+					<div class="resume-head">
+						<h3 class="resume-title">Freelance web developer</h3>
+						<span class="resume-meta">2026 - now</span>
+					</div>
+					<ul class="resume-points">
+						<li>
+							Designed and hand-coded a site that sells and hosts a
+							driving instructor's course, no site builders
+							(launching soon)
+						</li>
+						<li>
+							Building a free app for my school's Junior Shelach
+							Guides (<bdi lang="he">מש״צים</bdi>) program, so guides
+							can coordinate, book hours and pick up jobs (in
+							development)
+						</li>
+					</ul>
+				</div>
+				<div class="resume-entry">
+					<div class="resume-head">
+						<h3 class="resume-title">Python and web dev tutor</h3>
+						<span class="resume-meta">2025 - now</span>
+					</div>
+					<ul class="resume-points">
+						<li>
+							Teach Python and web development basics to private
+							students
+						</li>
+					</ul>
+				</div>
+				<div class="resume-entry">
+					<div class="resume-head">
+						<h3 class="resume-title">Dog walker</h3>
+						<span class="resume-meta">2023 - 2025</span>
+					</div>
+					<ul class="resume-points">
+						<li>Walked dogs for families in my neighbourhood</li>
+					</ul>
+				</div>
+			</section>
+			<section class="resume-section">
+				<h2 class="resume-heading">projects</h2>
+				<div class="resume-entry">
+					<div class="resume-head">
+						<h3 class="resume-title">
+							<a
+								target="_blank"
+								href="https://github.com/if-not-nil/revo/blob/main/docs/editors.md"
+								>Revo tooling</a
+							>
+						</h3>
+						<span class="resume-meta">Rust · Tree-sitter · LSP</span>
+					</div>
+					<ul class="resume-points">
+						<li>
+							Built Revo's
+							<a
+								target="_blank"
+								href="https://github.com/w0x7y/revo-zed-extension"
+								>Zed extension</a
+							>, credited in the language's official editor docs:
+							file recognition, Tree-sitter highlighting and Revo's
+							language server
+						</li>
+						<li>
+							Wrote
+							<a
+								target="_blank"
+								href="https://github.com/w0x7y/revo-formatter"
+								>revofmt</a
+							>, a Rust formatter library and CLI checked against a
+							pinned upstream parser, with plugins for Zed, VS Code
+							and Neovim
+						</li>
+						<li>
+							Maintain a
+							<a
+								target="_blank"
+								href="https://github.com/w0x7y/tree-sitter-revo"
+								>Tree-sitter grammar</a
+							>
+							for current Revo, building on doomy's original grammar
+						</li>
+					</ul>
+				</div>
+				<div class="resume-entry">
+					<div class="resume-head">
+						<h3 class="resume-title">
+							<a
+								target="_blank"
+								href="https://patternbook-w0x7y.vercel.app"
+								>Patternbook</a
+							>
+						</h3>
+						<span class="resume-meta"
+							>TypeScript · React · Tailwind</span
+						>
+					</div>
+					<ul class="resume-points">
+						<li>
+							339 copy-paste layout patterns in React + Tailwind and
+							HTML + CSS, each with a brief written for AI agents
+						</li>
+						<li>
+							Published an MCP server, patternbook-mcp, so coding
+							agents can search and fetch patterns directly
+						</li>
+					</ul>
+				</div>
+				<div class="resume-entry">
+					<div class="resume-head">
+						<h3 class="resume-title">Minecraft mods</h3>
+						<span class="resume-meta">Java · Fabric</span>
+					</div>
+					<ul class="resume-points">
+						<li>
+							<a
+								target="_blank"
+								href="https://modrinth.com/mod/just-tiers"
+								>Just Tiers</a
+							>
+							shows a player's tier in a chosen game mode, with
+							support for PvPTiers, PvPHQ, SubTiers and NovaTiers
+							(<span class="resume-downloads" data-modrinth="just-tiers"
+								>643</span
+							>
+							downloads on Modrinth)
+						</li>
+						<li>
+							<a
+								target="_blank"
+								href="https://github.com/w0x7y/Better-Typing"
+								>Better Typing</a
+							>
+							adds spell check, autocomplete and undo/redo to
+							Minecraft text fields (waiting for Modrinth review)
+						</li>
+					</ul>
+				</div>
+				<div class="resume-entry">
+					<div class="resume-head">
+						<h3 class="resume-title">
+							<a
+								target="_blank"
+								href="https://github.com/w0x7y/kinevault-app"
+								>KineVault Track</a
+							>
+						</h3>
+						<span class="resume-meta"
+							>TypeScript · Expo · Supabase</span
+						>
+					</div>
+					<ul class="resume-points">
+						<li>
+							Building the whole nutrition and exercise tracking app,
+							from the Supabase backend to the UI design (in
+							development)
+						</li>
+						<li>
+							Two-person team: my teammate builds KineVault, which
+							makes 3D exercise videos
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="resume-section">
+				<h2 class="resume-heading">volunteering</h2>
+				<div class="resume-entry">
+					<div class="resume-head">
+						<h3 class="resume-title">Latet</h3>
+						<span class="resume-meta">2025 - 2026</span>
+					</div>
+					<ul class="resume-points">
+						<li>
+							Holiday donation drives at a local mall: asking
+							shoppers to buy items and donate them to families in
+							need
+						</li>
+					</ul>
+				</div>
+				<div class="resume-entry">
+					<div class="resume-head">
+						<h3 class="resume-title">Public library</h3>
+						<span class="resume-meta">2024 - now</span>
+					</div>
+					<ul class="resume-points">
+						<li>Organise books every week</li>
+					</ul>
+				</div>
+			</section>
+			<section class="resume-section">
+				<h2 class="resume-heading">skills</h2>
+				<ul class="resume-points">
+					<li>
+						<span class="resume-label">languages:</span> TypeScript,
+						JavaScript, Python, Java
+					</li>
+					<li>
+						<span class="resume-label">tools:</span> React, Expo,
+						Tailwind, Supabase, PostgreSQL, SQLite, Git, Linux
+					</li>
+					<li>
+						<span class="resume-label">ai:</span> I'm not living under
+						a rock. I use AI coding agents to review my code, create
+						first drafts and sometimes write the code
+					</li>
+					<li>
+						<span class="resume-label">spoken:</span> Hebrew (native),
+						English (fluent)
+					</li>
+					<li>
+						<span class="resume-label">outside code:</span> Muay Thai,
+						BJJ and MMA
+					</li>
+				</ul>
+			</section>
+		</template>
 		<template id="page-links">
 			<div class="socials">
 				<ul class="socials-list">
@@ -188,6 +425,11 @@
 						<span class="socials-name">github</span>
 						<span class="socials-arrow" aria-hidden="true">-></span>
 						<a target="_blank" href="https://github.com/w0x7y">github.com/w0x7y</a>
+					</li>
+					<li>
+						<span class="socials-name">email</span>
+						<span class="socials-arrow" aria-hidden="true">-></span>
+						<a href="mailto:idangilb@gmail.com">idangilb@gmail.com</a>
 					</li>
 				</ul>
 				<p class="socials-note">yea, thats it...</p>

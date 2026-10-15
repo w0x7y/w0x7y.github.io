@@ -18,11 +18,13 @@ const cacheMinutes = 10;
 const searchLimit = 1000;
 const commands = {
 	github: ["git", "log"],
+	resume: ["cat", "resume/resume.md", "ls-file"],
 	links: ["./links.sh"],
 };
 const loaders = {
 	projects: loadProjects,
 	github: loadCommits,
+	resume: loadDownloads,
 };
 let renderCount = 0;
 
@@ -277,6 +279,30 @@ async function loadCommits(container, isCurrent) {
 
 	more.addEventListener("click", next);
 	await next();
+}
+
+async function getDownloads(slug) {
+	const key = `modrinth-${slug}`;
+	const cached = readCache(key);
+	if (cached !== null) return cached;
+
+	const response = await fetch(`https://api.modrinth.com/v2/project/${slug}`);
+	if (!response.ok) throw new Error(`Modrinth returned ${response.status}`);
+	const { downloads } = await response.json();
+
+	writeCache(key, downloads);
+	return downloads;
+}
+
+// The page ships with a recent count, so a failed request just leaves it.
+function loadDownloads(container, isCurrent) {
+	for (const count of container.querySelectorAll("[data-modrinth]")) {
+		getDownloads(count.dataset.modrinth)
+			.then((downloads) => {
+				if (isCurrent()) count.textContent = downloads.toLocaleString("en-US");
+			})
+			.catch(() => {});
+	}
 }
 
 function render() {
