@@ -111,6 +111,7 @@ function repoList(repos) {
 
 		const name = element("a", "repo-name", `${repo.name}/`);
 		name.href = repo.url;
+		name.target = "_blank";
 
 		const meta = span("repo-meta");
 		const parts = [];
@@ -216,6 +217,7 @@ function commitItem(commit) {
 	const item = element("li", "commit");
 	const sha = element("a", "commit-sha", commit.sha);
 	sha.href = commit.url;
+	sha.target = "_blank";
 	item.append(
 		sha,
 		" ",
