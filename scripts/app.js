@@ -349,6 +349,16 @@ applyTheme(
 	document.documentElement.dataset.theme === "light" ? "light" : "dark",
 );
 
+// Follow the system theme until the visitor picks one explicitly.
+const systemLight = matchMedia("(prefers-color-scheme: light)");
+systemLight.addEventListener("change", (event) => {
+	let stored = null;
+	try {
+		stored = localStorage.getItem("theme");
+	} catch {}
+	if (!stored) applyTheme(event.matches ? "light" : "dark");
+});
+
 smiley.parentElement.addEventListener("pointerenter", () => {
 	smiley.textContent = hoverFace;
 });

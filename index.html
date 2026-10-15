@@ -15,11 +15,17 @@
 		/>
 		<link rel="stylesheet" href="./styles/style.css" />
 		<script>
+			let theme = null;
 			try {
-				if (localStorage.getItem("theme") === "light") {
-					document.documentElement.dataset.theme = "light";
-				}
+				theme = localStorage.getItem("theme");
 			} catch {}
+			if (
+				theme === "light" ||
+				(theme !== "dark" &&
+					matchMedia("(prefers-color-scheme: light)").matches)
+			) {
+				document.documentElement.dataset.theme = "light";
+			}
 		</script>
 		<script src="./scripts/app.js" defer></script>
 	</head>
