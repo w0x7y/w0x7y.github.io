@@ -6,6 +6,10 @@
 		<meta name="theme-color" content="#23272e" />
 		<link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
 		<title>I'm w0x7y :O</title>
+		<meta
+			name="description"
+			content="Idan Gilboa (w0x7y), a 17 year old self-taught full-stack developer from Israel. Projects, GitHub activity, resume and contact."
+		/>
 		<link
 			rel="preload"
 			href="./assets/fonts/iosevka-400.woff2"
@@ -36,15 +40,15 @@
 				<source srcset="./assets/pfp.webp" type="image/webp" />
 				<img
 					class="pfp"
-					alt="Profile picture"
+					alt="Idan Gilboa"
 					src="./assets/pfp.webp"
 				/>
 			</picture>
 			<div id="profile" class="profile">
-				<h2 class="profile-name">
+				<h1 class="profile-name">
 					<span class="profile-handle">w0x7y</span>
 					<span id="profile-smiley" class="profile-smiley">:O</span>
-				</h2>
+				</h1>
 				<p class="profile-about-me">
 					I'm a 17 year old student and a self-taught full-stack
 					developer
@@ -80,13 +84,18 @@
       001
        00</pre>
 			</div>
-			<nav>
-				<a class="ls-file" href="#readme">readme.md</a>
-				<a class="ls-dir" href="#projects">projects/</a>
-				<a class="ls-dir" href="#github">.github/</a>
-				<a class="ls-dir" href="#resume">resume/</a>
-				<a class="ls-exec" href="#links">links.sh</a>
-			</nav>
+			<div class="nav-row">
+				<nav>
+					<a class="ls-file" href="#readme">readme.md</a>
+					<a class="ls-dir" href="#projects">projects/</a>
+					<a class="ls-dir" href="#github">.github/</a>
+					<a class="ls-dir" href="#resume">resume/</a>
+					<a class="ls-exec" href="#links">links.sh</a>
+				</nav>
+				<a id="sparkline" class="sparkline" href="#github" hidden>
+					<span class="sparkline-bars" aria-hidden="true"></span>
+				</a>
+			</div>
 		</header>
 		<main id="main-content" class="main-content"></main>
 		<footer class="site-footer">
@@ -99,7 +108,16 @@
 				<span aria-hidden="true">/</span>
 				<button type="button" data-theme-option="light">light</button>
 			</div>
-			<div class="palette" aria-hidden="true"></div>
+			<div class="palette" aria-hidden="true">
+				<span style="background: var(--rime-red)"></span>
+				<span style="background: var(--rime-pink)"></span>
+				<span style="background: var(--rime-yellow)"></span>
+				<span style="background: var(--rime-green)"></span>
+				<span style="background: var(--rime-cyan)"></span>
+				<span style="background: var(--rime-blue)"></span>
+				<span style="background: var(--rime-violet)"></span>
+				<span style="background: var(--rime-steel)"></span>
+			</div>
 		</footer>
 		<template id="page-readme">
 			<p>Hi, I'm Idan Gilboa, but online I go by w0x7y.</p>
@@ -176,7 +194,7 @@
 		<template id="page-github"></template>
 		<template id="page-resume">
 			<header class="resume-header">
-				<h2 class="resume-name">Idan Gilboa</h2>
+				<h3 class="resume-name">Idan Gilboa</h3>
 				<p class="resume-contact">
 					<a href="mailto:idangilb@gmail.com">idangilb@gmail.com</a>
 					<span aria-hidden="true">·</span>
@@ -186,10 +204,10 @@
 				</p>
 			</header>
 			<section class="resume-section">
-				<h2 class="resume-heading">education</h2>
+				<h4 class="resume-heading">education</h4>
 				<div class="resume-entry">
 					<div class="resume-head">
-						<h3 class="resume-title">High school, Israel</h3>
+						<h5 class="resume-title">High school, Israel</h5>
 						<span class="resume-meta">graduating 2028</span>
 					</div>
 					<ul class="resume-points">
@@ -199,10 +217,10 @@
 				</div>
 			</section>
 			<section class="resume-section">
-				<h2 class="resume-heading">experience</h2>
+				<h4 class="resume-heading">experience</h4>
 				<div class="resume-entry">
 					<div class="resume-head">
-						<h3 class="resume-title">Freelance web developer</h3>
+						<h5 class="resume-title">Freelance web developer</h5>
 						<span class="resume-meta">2026 - now</span>
 					</div>
 					<ul class="resume-points">
@@ -221,7 +239,7 @@
 				</div>
 				<div class="resume-entry">
 					<div class="resume-head">
-						<h3 class="resume-title">Python and web dev tutor</h3>
+						<h5 class="resume-title">Python and web dev tutor</h5>
 						<span class="resume-meta">2025 - now</span>
 					</div>
 					<ul class="resume-points">
@@ -233,7 +251,7 @@
 				</div>
 				<div class="resume-entry">
 					<div class="resume-head">
-						<h3 class="resume-title">Dog walker</h3>
+						<h5 class="resume-title">Dog walker</h5>
 						<span class="resume-meta">2023 - 2025</span>
 					</div>
 					<ul class="resume-points">
@@ -242,16 +260,16 @@
 				</div>
 			</section>
 			<section class="resume-section">
-				<h2 class="resume-heading">projects</h2>
+				<h4 class="resume-heading">projects</h4>
 				<div class="resume-entry">
 					<div class="resume-head">
-						<h3 class="resume-title">
+						<h5 class="resume-title">
 							<a
 								target="_blank"
 								href="https://github.com/if-not-nil/revo/blob/main/docs/editors.md"
 								>Revo tooling</a
 							>
-						</h3>
+						</h5>
 						<span class="resume-meta">Rust · Tree-sitter · LSP</span>
 					</div>
 					<ul class="resume-points">
@@ -288,13 +306,13 @@
 				</div>
 				<div class="resume-entry">
 					<div class="resume-head">
-						<h3 class="resume-title">
+						<h5 class="resume-title">
 							<a
 								target="_blank"
 								href="https://patternbook-w0x7y.vercel.app"
 								>Patternbook</a
 							>
-						</h3>
+						</h5>
 						<span class="resume-meta"
 							>TypeScript · React · Tailwind</span
 						>
@@ -312,13 +330,13 @@
 				</div>
 				<div class="resume-entry">
 					<div class="resume-head">
-						<h3 class="resume-title">
+						<h5 class="resume-title">
 							<a
 								target="_blank"
 								href="https://modrinth.com/user/w0x7y"
 								>Minecraft mods</a
 							>
-						</h3>
+						</h5>
 						<span class="resume-meta">Java · Fabric</span>
 					</div>
 					<ul class="resume-points">
@@ -348,13 +366,13 @@
 				</div>
 				<div class="resume-entry">
 					<div class="resume-head">
-						<h3 class="resume-title">
+						<h5 class="resume-title">
 							<a
 								target="_blank"
 								href="https://github.com/w0x7y/kinevault-app"
 								>KineVault Track</a
 							>
-						</h3>
+						</h5>
 						<span class="resume-meta"
 							>TypeScript · Expo · Supabase</span
 						>
@@ -373,10 +391,10 @@
 				</div>
 			</section>
 			<section class="resume-section">
-				<h2 class="resume-heading">volunteering</h2>
+				<h4 class="resume-heading">volunteering</h4>
 				<div class="resume-entry">
 					<div class="resume-head">
-						<h3 class="resume-title">Latet</h3>
+						<h5 class="resume-title">Latet</h5>
 						<span class="resume-meta">2025 - 2026</span>
 					</div>
 					<ul class="resume-points">
@@ -389,7 +407,7 @@
 				</div>
 				<div class="resume-entry">
 					<div class="resume-head">
-						<h3 class="resume-title">Public library</h3>
+						<h5 class="resume-title">Public library</h5>
 						<span class="resume-meta">2024 - now</span>
 					</div>
 					<ul class="resume-points">
@@ -398,7 +416,7 @@
 				</div>
 			</section>
 			<section class="resume-section">
-				<h2 class="resume-heading">skills</h2>
+				<h4 class="resume-heading">skills</h4>
 				<ul class="resume-points">
 					<li>
 						<span class="resume-label">languages:</span> TypeScript,
@@ -433,12 +451,19 @@
 						<a target="_blank" href="https://github.com/w0x7y">github.com/w0x7y</a>
 					</li>
 					<li>
+						<span class="socials-name">modrinth</span>
+						<span class="socials-arrow" aria-hidden="true">-></span>
+						<a target="_blank" href="https://modrinth.com/user/w0x7y"
+							>modrinth.com/user/w0x7y</a
+						>
+					</li>
+					<li>
 						<span class="socials-name">email</span>
 						<span class="socials-arrow" aria-hidden="true">-></span>
 						<a href="mailto:idangilb@gmail.com">idangilb@gmail.com</a>
 					</li>
 				</ul>
-				<p class="socials-note">yea, thats it...</p>
+				<p class="socials-note">yea, that's it...</p>
 			</div>
 		</template>
 	</body>
