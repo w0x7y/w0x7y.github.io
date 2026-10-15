@@ -363,10 +363,6 @@ nav {
 	color: var(--rime-red);
 }
 
-.prompt-error-inline {
-	display: inline;
-}
-
 .status {
 	color: var(--rime-muted);
 }
@@ -381,7 +377,8 @@ nav {
 	list-style: none;
 }
 
-.repo-head {
+.repo-head,
+.resume-head {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
@@ -389,7 +386,8 @@ nav {
 	gap: 0 1rem;
 }
 
-.repo-meta {
+.repo-meta,
+.resume-meta {
 	font-size: 0.875rem;
 	color: var(--rime-muted);
 }
@@ -437,6 +435,71 @@ nav {
 
 .commit-repo {
 	color: var(--rime-cyan);
+}
+
+.resume-section {
+	margin-top: 1.5rem;
+}
+
+.resume-name {
+	font-size: inherit;
+
+	/* The second value hides the marker from screen readers where supported. */
+	&::before {
+		content: "# ";
+		content: "# " / "";
+		color: var(--rime-comment);
+	}
+}
+
+.resume-contact {
+	margin-top: 0.125rem;
+	color: var(--rime-comment);
+}
+
+.resume-heading {
+	font-size: inherit;
+	font-weight: 400;
+	color: var(--rime-violet);
+
+	&::before {
+		content: "## ";
+		content: "## " / "";
+		color: var(--rime-comment);
+	}
+}
+
+.resume-entry {
+	margin-top: 0.75rem;
+}
+
+.resume-title {
+	font-size: inherit;
+}
+
+.resume-points {
+	max-width: 70ch;
+	margin-top: 0.25rem;
+	list-style: none;
+
+	li {
+		padding-left: 2ch;
+		text-indent: -2ch;
+
+		&::before {
+			content: "- ";
+			content: "- " / "";
+			color: var(--rime-comment);
+		}
+	}
+}
+
+.resume-label {
+	color: var(--rime-cyan);
+}
+
+.resume-downloads {
+	color: var(--rime-yellow);
 }
 
 .main-content:has(> .socials) {

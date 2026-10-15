@@ -1,2 +1,4 @@
 # graft's local graph cache — regenerable, not committed (run `graft build`).
 /graft/
+# The design hook's session cache holds absolute local paths.
+/.impeccable/hook.cache.json
