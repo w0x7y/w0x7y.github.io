@@ -83,7 +83,7 @@ html {
 body {
 	display: flex;
 	flex-direction: column;
-	min-height: 100vh;
+	min-height: 100svh;
 	font-family: "Iosevka", ui-monospace, Menlo, Consolas, monospace;
 	color: var(--rime-fg);
 	padding-inline: 1rem;
@@ -130,6 +130,8 @@ select {
 h1,
 h2,
 h3,
+h4,
+h5,
 strong {
 	color: var(--rime-fg-bright);
 }
@@ -188,7 +190,7 @@ code {
 	align-items: center;
 	gap: 1rem 2rem;
 	width: var(--hero-width);
-	margin-top: 0.2rem;
+	margin-top: 1rem;
 
 	@media (max-width: 30rem) {
 		--photo-size: 7rem;
@@ -198,9 +200,7 @@ code {
 	&::after {
 		content: var(--dashes);
 		grid-area: line;
-		justify-self: center;
 		margin-top: -0.5rem;
-		width: min(100vw, calc(var(--profile-width) * 1.5));
 		overflow: hidden;
 		white-space: nowrap;
 		line-height: 1;
@@ -231,8 +231,14 @@ code {
 }
 
 .profile-name {
-	font-size: 1.5rem;
-	line-height: 1.2;
+	font-size: clamp(2rem, 1rem + 3.25vw, 3.25rem);
+	line-height: 1.05;
+	letter-spacing: -0.02em;
+
+	/* Small enough to fit the narrow middle column on a phone. */
+	@media (max-width: 30rem) {
+		font-size: 1.5rem;
+	}
 }
 
 .profile-handle {
@@ -244,6 +250,7 @@ code {
 }
 
 .profile-about-me {
+	margin-top: 0.25rem;
 	color: var(--rime-muted);
 	text-wrap: balance;
 }
@@ -294,23 +301,66 @@ code {
 	color: var(--rime-cyan);
 }
 
-nav {
+.nav-row {
 	grid-area: nav;
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
+	justify-content: space-between;
+	align-items: center;
+	gap: 0 2rem;
+}
+
+.sparkline {
+	display: inline-flex;
+	font-size: 0.875rem;
+	line-height: 1;
+
+	&:hover {
+		opacity: 0.8;
+	}
+
+	/* A phone's nav fills the row, so the graph would wrap onto its own line. */
+	@media (max-width: 30rem) {
+		display: none;
+	}
+}
+
+.sparkline-bars {
+	display: flex;
+	align-items: flex-end;
+	gap: 0.2em;
+	height: 1em;
+}
+
+.sparkline-bar {
+	width: 0.45em;
+	height: calc(var(--level) / 8 * 1em);
+	background: var(--rime-green);
+
+	&.is-empty {
+		background: var(--rime-comment);
+	}
+}
+
+nav {
+	display: flex;
+	flex-wrap: wrap;
 	gap: 0.25rem 1.5rem;
 	font-size: 1.25rem;
 
 	@media (max-width: 30rem) {
 		gap: 0.25rem 0.75rem;
-		font-size: 0.875rem;
+		font-size: 0.9375rem;
 	}
 
 	a,
 	a:hover {
 		color: var(--ls-color, var(--rime-fg));
 		text-decoration: none;
+	}
+
+	a:active {
+		opacity: 0.7;
 	}
 
 	a:hover {
@@ -502,18 +552,9 @@ nav {
 	color: var(--rime-yellow);
 }
 
-.main-content:has(> .socials) {
-	display: flex;
-	flex-direction: column;
-}
-
 .socials {
 	display: grid;
-	justify-items: center;
-	gap: 0.75rem;
-	margin: auto;
-	padding-block: 2rem;
-	text-align: center;
+	gap: 1rem;
 }
 
 .socials-list {
@@ -521,9 +562,16 @@ nav {
 	gap: 0.5rem;
 	font-size: 1.25rem;
 	list-style: none;
+
+	/* Keeps the longest row (modrinth) on one line. */
+	@media (max-width: 30rem) {
+		font-size: 1rem;
+	}
 }
 
 .socials-name {
+	display: inline-block;
+	min-width: 9ch;
 	color: var(--rime-violet);
 }
 
@@ -569,8 +617,10 @@ nav {
 		content: var(--dashes);
 		position: absolute;
 		top: 0;
-		left: 0;
-		width: 100%;
+		left: 50%;
+		/* As wide as the header above, not the narrower footer. */
+		width: min(100vw - 2rem, 56rem);
+		transform: translateX(-50%);
 		overflow: hidden;
 		white-space: nowrap;
 		font-size: 1rem;
@@ -606,16 +656,16 @@ nav {
 .palette {
 	justify-self: end;
 	width: 8rem;
+	display: flex;
 	height: 0.75rem;
-	background: linear-gradient(
-		90deg,
-		var(--rime-red) 0 12.5%,
-		var(--rime-pink) 0 25%,
-		var(--rime-yellow) 0 37.5%,
-		var(--rime-green) 0 50%,
-		var(--rime-cyan) 0 62.5%,
-		var(--rime-blue) 0 75%,
-		var(--rime-violet) 0 87.5%,
-		var(--rime-steel) 0 100%
-	);
+
+	span {
+		flex: 1;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
 }

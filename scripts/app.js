@@ -170,7 +170,7 @@ async function loadProjects(container, isCurrent) {
 }
 
 function prompt(command, target, type) {
-	const line = document.createElement("h1");
+	const line = document.createElement("h2");
 	line.className = "prompt";
 	line.append(
 		span("prompt-path", "~/w0x7y"),
@@ -257,7 +257,7 @@ async function loadCommits(container, isCurrent) {
 				if (commit.date !== day) {
 					day = commit.date;
 					list = element("ul", "commit-list");
-					log.append(element("h2", "commit-date", day), list);
+					log.append(element("h3", "commit-date", day), list);
 				}
 				list.append(commitItem(commit));
 			}
@@ -391,6 +391,42 @@ smiley.parentElement.addEventListener("pointerenter", () => {
 smiley.parentElement.addEventListener("pointerleave", () => {
 	smiley.textContent = face;
 });
+
+const sparkline = document.getElementById("sparkline");
+const sparklineDays = 14;
+
+// Daily counts from GitHub's contribution graph. The deploy workflow
+// (.github/workflows/deploy.yml) saves them next to the site, so visitors only
+// load our own files.
+async function getContributions() {
+	const response = await fetch("./contributions.json");
+	if (!response.ok) throw new Error(`Contributions returned ${response.status}`);
+	const days = await response.json();
+	return days.slice(-sparklineDays);
+}
+
+// Stays hidden if the request fails, rather than drawing an empty graph.
+async function loadSparkline() {
+	try {
+		const days = await getContributions();
+		const max = Math.max(1, ...days.map((day) => day.count));
+		const bars = days.map(({ count }) => {
+			const bar = span(count ? "sparkline-bar" : "sparkline-bar is-empty");
+			const level = count ? Math.max(2, Math.round((count / max) * 8)) : 1;
+			bar.style.setProperty("--level", level);
+			return bar;
+		});
+		const total = days.reduce((sum, day) => sum + day.count, 0);
+		const summary = `${total} GitHub contributions in the last ${days.length} days`;
+
+		sparkline.querySelector(".sparkline-bars").replaceChildren(...bars);
+		sparkline.setAttribute("aria-label", summary);
+		sparkline.title = summary;
+		sparkline.hidden = false;
+	} catch {}
+}
+
+loadSparkline();
 
 window.addEventListener("hashchange", render);
 render();

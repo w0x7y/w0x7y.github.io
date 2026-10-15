@@ -1,0 +1,49 @@
+name: Deploy site
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # Every 6 hours, so the contribution sparkline stays current.
+    - cron: "23 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v7
+
+      # Saved next to the site so visitors' browsers never call a third party.
+      # If GitHub's API fails, the site still deploys and the sparkline stays hidden.
+      - name: Fetch the contribution calendar
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api graphql \
+            -f login="${{ github.repository_owner }}" \
+            -f query='query($login: String!) { user(login: $login) { contributionsCollection { contributionCalendar { weeks { contributionDays { date contributionCount } } } } } }' \
+            --jq '[.data.user.contributionsCollection.contributionCalendar.weeks[].contributionDays[]] | .[-30:] | map({date, count: .contributionCount})' \
+            > contributions.json
+
+      - uses: actions/configure-pages@v6
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: .
+
+      - id: deployment
+        uses: actions/deploy-pages@v5
