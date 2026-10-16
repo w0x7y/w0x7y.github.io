@@ -301,7 +301,8 @@ function loadDownloads(container, isCurrent) {
 	for (const count of container.querySelectorAll("[data-modrinth]")) {
 		getDownloads(count.dataset.modrinth)
 			.then((downloads) => {
-				if (isCurrent()) count.textContent = downloads.toLocaleString("en-US");
+				if (isCurrent())
+					count.textContent = downloads.toLocaleString("en-US");
 			})
 			.catch(() => {});
 	}
@@ -402,7 +403,8 @@ const sparklineDays = 14;
 // load our own files.
 async function getContributions() {
 	const response = await fetch("./contributions.json");
-	if (!response.ok) throw new Error(`Contributions returned ${response.status}`);
+	if (!response.ok)
+		throw new Error(`Contributions returned ${response.status}`);
 	const days = await response.json();
 	return days.slice(-sparklineDays);
 }
@@ -413,8 +415,12 @@ async function loadSparkline() {
 		const days = await getContributions();
 		const max = Math.max(1, ...days.map((day) => day.count));
 		const bars = days.map(({ count }) => {
-			const bar = span(count ? "sparkline-bar" : "sparkline-bar is-empty");
-			const level = count ? Math.max(2, Math.round((count / max) * 8)) : 1;
+			const bar = span(
+				count ? "sparkline-bar" : "sparkline-bar is-empty",
+			);
+			const level = count
+				? Math.max(2, Math.round((count / max) * 8))
+				: 1;
 			bar.style.setProperty("--level", level);
 			return bar;
 		});
