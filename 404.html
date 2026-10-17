@@ -5,10 +5,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Page not found</title>
 		<script>
-			// Project sites are case-sensitive, so /rime/... lands here instead of on Rime's site.
+			// Project sites are case-sensitive, so /Rime/... lands here instead of on rime's site.
 			const match = location.pathname.match(/^\/rime(\/.*)?$/i);
-			if (match && !location.pathname.startsWith("/Rime/")) {
-				location.replace("/Rime" + (match[1] || "/") + location.search + location.hash);
+			if (match && !location.pathname.startsWith("/rime/")) {
+				location.replace("/rime" + (match[1] || "/") + location.search + location.hash);
 			}
 		</script>
 	</head>
