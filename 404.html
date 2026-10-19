@@ -1,18 +1,23 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Page not found</title>
-		<script>
-			// Project sites are case-sensitive, so /Rime/... lands here instead of on rime's site.
-			const match = location.pathname.match(/^\/rime(\/.*)?$/i);
-			if (match && !location.pathname.startsWith("/rime/")) {
-				location.replace("/rime" + (match[1] || "/") + location.search + location.hash);
-			}
-		</script>
-	</head>
-	<body>
-		<p>Page not found. <a href="/">Go to the home page</a>.</p>
-	</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Page not found</title>
+        <script>
+            // Project sites are case-sensitive, so /Rime/... lands here instead of on rime's site.
+            const match = location.pathname.match(/^\/rime(\/.*)?$/i);
+            if (match && !location.pathname.startsWith("/rime/")) {
+                location.replace(
+                    "/rime" +
+                        (match[1] || "/") +
+                        location.search +
+                        location.hash,
+                );
+            }
+        </script>
+    </head>
+    <body>
+        <p>Page not found. <a href="/">Go to the home page</a>.</p>
+    </body>
 </html>
