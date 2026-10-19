@@ -76,7 +76,7 @@
 html {
 	color-scheme: dark;
 	scroll-behavior: smooth;
-	scrollbar-color: var(--rime-bg-sel) var(--rime-bg);
+	scrollbar-width: none;
 	accent-color: var(--rime-blue);
 }
 
@@ -95,6 +95,11 @@ body {
 html,
 body {
 	background-color: var(--rime-bg);
+}
+
+/* Older Safari ignores scrollbar-width */
+::-webkit-scrollbar {
+	display: none;
 }
 
 img,
