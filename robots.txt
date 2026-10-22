@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://w0x7y.dev/sitemap.xml
+Sitemap: https://w0x7y.dev/rime/sitemap.xml
