@@ -119,7 +119,7 @@
           >rime</a
         >
       </p>
-      <div class="theme-switch" role="group" aria-label="Colour theme">
+      <div class="theme-switch" role="group" aria-label="Color theme">
         <button type="button" data-theme-option="dark">dark</button>
         <span aria-hidden="true">/</span>
         <button type="button" data-theme-option="light">light</button>
@@ -260,15 +260,36 @@
           </div>
           <ul class="resume-points">
             <li>
-              Designed and hand-coded a site that sells and hosts a driving
-              instructor's course, no site builders (launching soon)
+              Designed and hand-coded a
+              <a target="_blank" href="https://oren-bechor-drive.github.io/"
+                >site</a
+              >
+              that sells and hosts a driving instructor's course, no site
+              builders (launching soon)
+            </li>
+          </ul>
+        </div>
+        <div class="resume-entry">
+          <div class="resume-head">
+            <h5 class="resume-title">
+              Junior Shelach Guides (<bdi lang="he">מש״צים</bdi>) app
+            </h5>
+            <span class="resume-meta">2026 - now</span>
+          </div>
+          <ul class="resume-points">
+            <li>
+              Building a free Hebrew app for iOS, Android and the web for my
+              school's Junior Shelach Guides program, for its guides,
+              instructors, teachers and parents (getting ready for a pilot)
             </li>
             <li>
-              Building a free app for my school's Junior Shelach Guides (<bdi
-                lang="he"
-                >מש״צים</bdi
-              >) program, so guides can coordinate, book hours and pick up jobs
-              (in development)
+              Group messages with priority levels that wait out the night and
+              Shabbat, event sign-ups with waitlists, attendance that works
+              without signal, trip planning and volunteer-hour tracking
+            </li>
+            <li>
+              Built with Expo and Supabase. 142 tests check the database's
+              access rules and notification timing
             </li>
           </ul>
         </div>
@@ -281,18 +302,59 @@
             <li>Teach Python and web development basics to private students</li>
           </ul>
         </div>
-        <div class="resume-entry">
-          <div class="resume-head">
-            <h5 class="resume-title">Dog walker</h5>
-            <span class="resume-meta">2023 - 2025</span>
-          </div>
-          <ul class="resume-points">
-            <li>Walked dogs for families in my neighbourhood</li>
-          </ul>
-        </div>
       </section>
       <section class="resume-section">
         <h4 class="resume-heading">projects</h4>
+        <div class="resume-entry">
+          <div class="resume-head">
+            <h5 class="resume-title">
+              <a target="_blank" href="https://github.com/w0x7y/kinevault-app"
+                >KineVault Track</a
+              >
+            </h5>
+            <span class="resume-meta">TypeScript · Expo · Supabase</span>
+          </div>
+          <ul class="resume-points">
+            <li>
+              Building the whole nutrition and workout tracking app for iOS and
+              Android, from the Supabase backend to the UI design, in a
+              two-person team (in development)
+            </li>
+            <li>
+              5,431 foods searchable offline, barcode scanning, live workouts
+              with a rest timer and personal records, and tracking for water,
+              steps, weight and progress photos
+            </li>
+            <li>
+              Shares accounts with KineVault, my teammate's 3D exercise video
+              app, and has Google sign-in, account deletion and signed Android
+              builds from CI
+            </li>
+          </ul>
+        </div>
+        <div class="resume-entry">
+          <div class="resume-head">
+            <h5 class="resume-title">
+              <a target="_blank" href="https://github.com/w0x7y/gentooinstall"
+                >gentooinstall</a
+              >
+            </h5>
+            <span class="resume-meta">Bash · Linux</span>
+          </div>
+          <ul class="resume-points">
+            <li>
+              Designed and tested a menu-driven Gentoo Linux installer, like
+              Arch's archinstall: OpenRC or systemd, ext4, xfs or btrfs with
+              rollback snapshots, disk encryption, three bootloaders and
+              installing next to Windows
+            </li>
+            <li>
+              About 630 tests run the install logic against fake commands, and a
+              dry run prints every command without touching the disk. Tested in
+              virtual machines and on a real laptop
+            </li>
+          </ul>
+        </div>
         <div class="resume-entry">
           <div class="resume-head">
             <h5 class="resume-title">
@@ -302,7 +364,7 @@
                 >Revo tooling</a
               >
             </h5>
-            <span class="resume-meta">Rust · Tree-sitter · LSP</span>
+            <span class="resume-meta">Rust · Zig · Tree-sitter · Zed</span>
           </div>
           <ul class="resume-points">
             <li>
@@ -320,6 +382,15 @@
                 >revofmt</a
               >, a Rust formatter library and CLI checked against a pinned
               upstream parser, with plugins for Zed, VS Code and Neovim
+            </li>
+            <li>
+              Open pull request that brings
+              <a
+                target="_blank"
+                href="https://github.com/if-not-nil/revo/pull/130"
+                >Revo's built-in Zig formatter</a
+              >
+              closer to clang-format
             </li>
             <li>
               Maintain a
@@ -343,63 +414,87 @@
           </div>
           <ul class="resume-points">
             <li>
-              339 copy-paste layout patterns in React + Tailwind and HTML + CSS,
-              each with a brief written for AI agents
+              Nearly 400 copy-paste layout patterns in React + Tailwind and HTML
+              + CSS, each with a brief written for AI agents
             </li>
             <li>
-              Published an MCP server, patternbook-mcp, so coding agents can
-              search and fetch patterns directly
+              Published an MCP server,
+              <a
+                target="_blank"
+                href="https://www.npmjs.com/package/patternbook-mcp"
+                >patternbook-mcp</a
+              >, so coding agents can search and fetch patterns directly (500+
+              npm downloads)
             </li>
           </ul>
         </div>
         <div class="resume-entry">
           <div class="resume-head">
             <h5 class="resume-title">
-              <a target="_blank" href="https://modrinth.com/user/w0x7y"
-                >Minecraft mods</a
+              <a target="_blank" href="https://modrinth.com/mod/just-tiers"
+                >Just Tiers</a
               >
             </h5>
             <span class="resume-meta">Java · Fabric</span>
           </div>
           <ul class="resume-points">
             <li>
-              <a target="_blank" href="https://modrinth.com/mod/just-tiers"
-                >Just Tiers</a
-              >
-              shows a player's tier in a chosen game mode, with support for
-              PvPTiers, PvPHQ, SubTiers and NovaTiers (<span
+              A Minecraft mod that shows a player's tier in a chosen game mode,
+              with support for PvPTiers, PvPHQ, SubTiers and NovaTiers (<span
                 class="resume-downloads"
                 data-modrinth="just-tiers"
-                >643</span
+                >1,290</span
               >
               downloads on Modrinth)
-            </li>
-            <li>
-              <a target="_blank" href="https://github.com/w0x7y/Better-Typing"
-                >Better Typing</a
-              >
-              adds spell check, autocomplete and undo/redo to Minecraft text
-              fields (waiting for Modrinth review)
             </li>
           </ul>
         </div>
         <div class="resume-entry">
           <div class="resume-head">
             <h5 class="resume-title">
-              <a target="_blank" href="https://github.com/w0x7y/kinevault-app"
-                >KineVault Track</a
-              >
+              <a target="_blank" href="https://w0x7y.dev/rime/">Rime</a>
             </h5>
-            <span class="resume-meta">TypeScript · Expo · Supabase</span>
+            <span class="resume-meta">Python · Lua</span>
           </div>
           <ul class="resume-points">
             <li>
-              Building the whole nutrition and exercise tracking app, from the
-              Supabase backend to the UI design (in development)
+              A cold colorscheme in five variants. A tested Python script
+              generates every port from shared palettes: Neovim, VS Code, Zed
+              and 40+ other apps, from Ghostty and tmux to bat and delta
             </li>
+          </ul>
+        </div>
+        <div class="resume-entry">
+          <div class="resume-head">
+            <h5 class="resume-title">
+              <a target="_blank" href="https://github.com/w0x7y/better-sql.nvim"
+                >better-sql.nvim</a
+              >
+            </h5>
+            <span class="resume-meta">Lua · Python · PostgreSQL</span>
+          </div>
+          <ul class="resume-points">
             <li>
-              Two-person team: my teammate builds KineVault, which makes 3D
-              exercise videos
+              A Neovim plugin to run SQL, browse schemas and edit table rows in
+              PostgreSQL, with paged results, filters, sorting, CSV export and
+              column completion
+            </li>
+          </ul>
+        </div>
+        <div class="resume-entry">
+          <div class="resume-head">
+            <h5 class="resume-title">Open source</h5>
+            <span class="resume-meta">JavaScript</span>
+          </div>
+          <ul class="resume-points">
+            <li>
+              Merged form features (radio buttons and multi-selects) and fixes
+              into
+              <a
+                target="_blank"
+                href="https://github.com/if-not-nil/stab/pulls?q=author%3Aw0x7y"
+                >stab</a
+              >, a small frontend framework
             </li>
           </ul>
         </div>
@@ -424,7 +519,7 @@
             <span class="resume-meta">2024 - now</span>
           </div>
           <ul class="resume-points">
-            <li>Organise books every week</li>
+            <li>Organize books every week</li>
           </ul>
         </div>
       </section>
@@ -433,11 +528,12 @@
         <ul class="resume-points">
           <li>
             <span class="resume-label">languages:</span> TypeScript, JavaScript,
-            Python, Java
+            Python, Java, Rust, Lua, Bash
           </li>
           <li>
             <span class="resume-label">tools:</span> React, Expo, Tailwind,
-            Supabase, PostgreSQL, SQLite, Git, Linux
+            Supabase, PostgreSQL, SQLite, Tree-sitter, Git, GitHub Actions,
+            Linux
           </li>
           <li>
             <span class="resume-label">ai:</span> I'm not living under a rock. I
