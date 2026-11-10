@@ -421,5 +421,16 @@ async function loadSparkline() {
 
 loadSparkline();
 
+// Born January 31, 2010. The HTML ships the age as of the last edit, so this only keeps it current.
+function getAge(now = new Date()) {
+  const age = now.getFullYear() - 2010;
+  return now.getMonth() === 0 && now.getDate() < 31 ? age - 1 : age;
+}
+
+const age = getAge();
+for (const el of document.querySelectorAll("[data-age]")) el.textContent = age;
+const description = document.querySelector('meta[name="description"]');
+description.content = description.content.replace(/\d+ year old/, `${age} year old`);
+
 window.addEventListener("hashchange", render);
 render();
